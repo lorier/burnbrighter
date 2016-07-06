@@ -1,16 +1,20 @@
 <?php
 
-// define('TAXONOMIES', "['plant-type','location','year-planted','light-requirement']");
 
 // Reposition the secondary navigation menu
 remove_action( 'genesis_after_header', 'genesis_do_subnav' );
+add_action( 'genesis_header', 'tw_secondary_nav', 1 );
+function tw_secondary_nav(){
+	echo '<div id="nav-secondary-wrap" class="mobile-hidden "><div class="wrap">';
+	genesis_do_subnav();
+	echo '</div></div>';
+}
 
 // Register the Third Nav menu
 add_action( 'init', 'rcms_register_portal_menu' );
 function rcms_register_portal_menu() {
 	register_nav_menu( 'third-menu' ,__( 'Third Navigation Menu' ));
 }
-
 
 //add featured image to posts
 add_action( 'genesis_entry_content', 'pb_featured_post_image', 8 );
@@ -30,13 +34,10 @@ function sp_custom_footer() {
 }
 
 // Hacky fix for Scroll-to-Fixed issue
-add_action('genesis_before_header', 'add_blank_div', 10);
-function add_blank_div(){
-	echo '<div class="decorative-bar"></div>';
-}
-// Disable auto paragraph tags in TinyMCE
-// remove_filter ('the_content',  'wpautop');
-// remove_filter ('comment_text', 'wpautop');
+// add_action('genesis_before_header', 'add_blank_div', 10);
+// function add_blank_div(){
+// 	echo '<div class="decorative-bar"></div>';
+// }
 
 // Enable shortcode use in widgets
 add_filter('widget_text', 'do_shortcode');
@@ -91,8 +92,6 @@ function rcms_favicon_filter( $favicon_url ) {
 add_action( 'wp', 'tw_force_home_page_layout' );
 function tw_force_home_page_layout() {
     if ( is_front_page() ) {
-		echo 'front page';
-        // remove_action( 'genesis_entry_content', 'genesis_do_post_content' );
 		add_filter('genesis_pre_get_option_site_layout', '__genesis_return_full_width_content');
     }
 }
@@ -114,27 +113,4 @@ function pb_move_featured_image(){
 		add_action( 'genesis_entry_header', 'genesis_do_post_title', 13);
 
 	}
-}
-
-
-//////////////////////////////////////
-// Template selection
-//////////////////////////////////////
-
-// @param string, default template path
-// @return string, modified template path
-
-// add_filter( 'template_include', 'lr_template_redirect' );
-function lr_template_redirect( $template ) {
-	// echo get_query_var( 'post_type');
- //    if ( is_post_type_archive('plant')){
- //        echo '<h1>this is the plant archive</h1>';
- //        // $template = locate_template( array('page-plants.php'), false ); 
- //        return $template;
- //    }else 
-    if ( is_tax(['plant-type','location','year-planted','light-requirement'])) {
-    	// echo 'is tax';
-        $template = get_query_template( 'page-plants' );    
-    }
-    return $template;
 }

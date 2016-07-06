@@ -2,6 +2,7 @@
 function lr_print_pre($value) {
     echo "<pre>",print_r($value, true),"</pre>";
 }
+
 add_action( 'genesis_setup', 'pb_load_includes', 15 );
 function pb_load_includes() {
     foreach ( glob( dirname( __FILE__ ) . '/custom_inc/*.php' ) as $file ) { include $file; }
