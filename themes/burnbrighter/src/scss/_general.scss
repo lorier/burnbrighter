@@ -1,0 +1,55 @@
+// // ==== GENERAL ==== //
+// 
+// Media Queries:
+// 1400px
+// 1139px
+// 1023px
+// 900px
+// 480px
+// 400px
+
+// Media Queries
+$mobile-nav-down: 900px;
+$desktop-nav-up: 901px;
+
+// Color Palette
+$green: #8ebd54;
+$red: #df5558;
+
+$gray-rule: #E6DDC8;
+$light-gray: #e4e4e4;
+$lightest-gray: #eeeee9;
+$forms-gray: #d3d3d3;
+$off-white: #eef3db;
+$dark-gray: #312a2a;
+
+$body-font: 'Lato', sans-serif;
+$headline-font: 'Lato', sans-serif;
+
+//#946a4b
+
+//Fonts
+body {
+	background-color: #fff;
+}
+
+
+// Helper Classes
+.desktop-hidden {
+	@media screen and (min-width: $desktop-nav-up){
+		display: none !important;
+		visibility: hidden;
+	}
+}
+.mobile-hidden {
+	@media screen and (max-width: $mobile-nav-down){
+		display: none;
+		visibility: hidden;
+	}
+}
+.full-width-stretch {
+	text-align: center;
+    width: 300%;
+    margin-left: -1000px;
+    margin-right: 1000px;
+}
