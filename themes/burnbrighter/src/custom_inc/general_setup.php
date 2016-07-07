@@ -5,9 +5,9 @@
 remove_action( 'genesis_after_header', 'genesis_do_subnav' );
 add_action( 'genesis_header', 'tw_secondary_nav', 1 );
 function tw_secondary_nav(){
-	echo '<div id="nav-secondary-wrap" class="mobile-hidden "><div class="wrap">';
+	echo '<div id="nav-secondary-wrap" class="mobile-hidden wrap ">';
 	genesis_do_subnav();
-	echo '</div></div>';
+	echo '</div>';
 }
 
 // Register the Third Nav menu
@@ -29,7 +29,7 @@ add_action( 'genesis_footer', 'sp_custom_footer' );
 function sp_custom_footer() {
 	$output = '<p> &copy; Copyright ';
 	$output .= date('Y');
-	$output .= ' Lorie Ransom. All rights reserved.';
+	$output .= ' Burn Brighter. All rights reserved.';
 	echo $output;
 }
 

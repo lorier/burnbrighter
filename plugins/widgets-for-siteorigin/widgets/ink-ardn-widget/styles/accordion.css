@@ -1,0 +1,100 @@
+
+.accordion {
+	margin-bottom: 0;
+	margin-left: 0;
+}
+
+.accordion:before, .accordion:after {
+	content: " ";
+	display: table;
+}
+
+.accordion:after {
+	clear: both;
+}
+
+.accordion .accordion-navigation {
+	display: block;
+	margin-bottom: 0;
+	margin-left: 0 !important;
+	margin-top: 0 !important;
+	margin-right: 0 !important;
+}
+
+.accordion .accordion-navigation > a {
+	display: block;
+	font-family: inherit;
+	font-size: 1.1em;
+	padding: 1em;
+	text-decoration: none;
+	outline: none;
+	position: relative;
+}
+
+.accordion .accordion-navigation.active > a .iw-so-tgl-close {
+	display: block;
+}
+
+.accordion .accordion-navigation.active > a .iw-so-tgl-open {
+	display: none;
+}
+
+.accordion .accordion-navigation > a span {
+	position: absolute;
+	top: 5px;
+}
+
+.accordion .accordion-navigation > a .iw-so-tgl-close {
+	display: none;
+}
+
+.accordion .accordion-navigation > a .iw-so-tgl-open {
+	display: block;
+}
+
+.accordion .accordion-navigation > a:hover {
+	background: #e3e3e3;
+}
+
+.accordion .accordion-navigation > .content {
+	display: none;
+	padding: 0.9375em;
+}
+
+.accordion .accordion-navigation > .content.active {
+	background: #FFFFFF;
+	display: block;
+}
+
+.accordion .accordion-navigation > .content * {
+	display: none;
+}
+
+.accordion .accordion-navigation > .content.active * {
+	display: block;
+}
+
+.accordion .accordion-navigation > .content.active li {
+	display: list-item;
+}
+
+.accordion .accordion-navigation > a {
+	position: relative;
+	z-index: 10;
+}
+.accordion .accordion-navigation > .content {
+	padding: 0 0.9375rem;
+	height: 0;
+	display: block;
+	opacity: 0;
+	-webkit-transition: .5s all ease;
+	-moz-transition: .5s all ease;
+	-o-transition: .5s all ease;
+	-ms-transition: .5s all ease;
+	transition: .5s all ease;
+}
+.accordion .accordion-navigation > .content.active {
+	height: auto;
+	padding: 0.9375rem;
+	opacity: 1;
+}

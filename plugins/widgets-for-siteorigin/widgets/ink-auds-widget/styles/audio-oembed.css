@@ -1,0 +1,6 @@
+.audio-flex-frame iframe,
+.audio-flex-frame object,
+.audio-flex-frame embed,
+.audio-flex-frame frame {
+	width: 100%;
+}

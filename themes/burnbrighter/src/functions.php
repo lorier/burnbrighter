@@ -109,7 +109,7 @@ function kickstart_background_callback() {
 }
 
 // Add support for 5-column footer widgets
-add_theme_support( 'genesis-footer-widgets', 4 );
+add_theme_support( 'genesis-footer-widgets', 1 );
 
 // Add post formats
 // add_theme_support( 'post-formats', array( 'quote' ) );
