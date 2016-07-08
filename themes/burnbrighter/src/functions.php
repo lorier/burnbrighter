@@ -93,7 +93,8 @@ add_theme_support( 'genesis-responsive-viewport' );
 // Move menu to Header Right and remove the wrap div
 remove_action( 'genesis_after_header','genesis_do_nav' ) ;
 add_action( 'genesis_header_right','genesis_do_nav' );
-add_theme_support( 'genesis-structural-wraps', array( 'header', 'footer-widgets', 'footer' ) );
+add_theme_support( 'genesis-footer-widgets', 1 );
+add_theme_support( 'genesis-structural-wraps', array( 'header', 'footer-widgets' ) );
 
 // Unregister alternate layouts
 genesis_unregister_layout( 'content-sidebar-sidebar' );
@@ -109,7 +110,6 @@ function kickstart_background_callback() {
 }
 
 // Add support for 5-column footer widgets
-add_theme_support( 'genesis-footer-widgets', 1 );
 
 // Add post formats
 // add_theme_support( 'post-formats', array( 'quote' ) );

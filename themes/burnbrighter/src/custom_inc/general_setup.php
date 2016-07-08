@@ -25,14 +25,15 @@ function pb_featured_post_image() {
 
 // Customize the legal text
 remove_action( 'genesis_footer', 'genesis_do_footer' );
-add_action( 'genesis_footer', 'sp_custom_footer' );
+add_action( 'genesis_footer', 'sp_custom_footer', 11 );
 function sp_custom_footer() {
-	$output = '<p> &copy; Copyright ';
+	$output = '<div class="wrap"><p> &copy; Copyright ';
 	$output .= date('Y');
-	$output .= ' Burn Brighter. All rights reserved.';
+	$output .= ' Burn Brighter. All rights reserved.</p></div>';
 	echo $output;
 }
-
+remove_action( 'genesis_before_footer', 'genesis_footer_widget_areas' );
+add_action( 'genesis_footer', 'genesis_footer_widget_areas' );
 // Hacky fix for Scroll-to-Fixed issue
 // add_action('genesis_before_header', 'add_blank_div', 10);
 // function add_blank_div(){
