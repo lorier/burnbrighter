@@ -1261,6 +1261,7 @@ div.slide-excerpt-border .featured-link:hover {
 	overflow: hidden;
 	position: relative;
 	top: -124px;
+	z-index: -1;
 }
 
 .home-top-slider .wrap {
@@ -2001,13 +2002,13 @@ Media Queries
 		font-size: 14px;
 	}
 
-	.js .genesis-nav-menu .menu-item {
-		display: block;
-		float: none;
-		margin: 0;
-		position: relative;
-		text-align: left;
-	}
+	// .js .genesis-nav-menu .menu-item {
+	// 	display: block;
+	// 	float: none;
+	// 	margin: 0;
+	// 	position: relative;
+	// 	text-align: left;
+	// }
 
 	.js .genesis-nav-menu .menu-item:hover {
 		position: relative;
@@ -2068,13 +2069,13 @@ Media Queries
 		font-size: 12px;
 	}
 
-	.js nav .genesis-nav-menu .menu-item .sub-menu li a:focus,
-	.js nav .genesis-nav-menu .menu-item a:focus,
-	.js nav button:focus,
-	.js .menu-toggle:focus {
-		background-color: #efefef;
-		color: #999;
-	}
+	// .js nav .genesis-nav-menu .menu-item .sub-menu li a:focus,
+	// .js nav .genesis-nav-menu .menu-item a:focus,
+	// .js nav button:focus,
+	// .js .menu-toggle:focus {
+	// 	background-color: #efefef;
+	// 	color: #999;
+	// }
 
 	.js .menu-toggle:focus:before,
 	.js .menu-toggle:hover:before {

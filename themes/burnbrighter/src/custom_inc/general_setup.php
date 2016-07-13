@@ -1,20 +1,20 @@
 <?php
+//remove tites from pages
 
+// Image sizes
+add_image_size( 'post_featured', 308, 400, true );
+// add_image_size( 'post_medium', 400, 218, true );
+// add_image_size( 'post_large', 573, 285, true );
 
 // Reposition the secondary navigation menu
 remove_action( 'genesis_after_header', 'genesis_do_subnav' );
-add_action( 'genesis_header', 'tw_secondary_nav', 1 );
+add_action( 'genesis_header', 'tw_secondary_nav', 5 );
 function tw_secondary_nav(){
 	echo '<div id="nav-secondary-wrap" class="mobile-hidden wrap ">';
 	genesis_do_subnav();
 	echo '</div>';
 }
 
-// Register the Third Nav menu
-add_action( 'init', 'rcms_register_portal_menu' );
-function rcms_register_portal_menu() {
-	register_nav_menu( 'third-menu' ,__( 'Third Navigation Menu' ));
-}
 
 //add featured image to posts
 add_action( 'genesis_entry_content', 'pb_featured_post_image', 8 );
@@ -34,11 +34,6 @@ function sp_custom_footer() {
 }
 remove_action( 'genesis_before_footer', 'genesis_footer_widget_areas' );
 add_action( 'genesis_footer', 'genesis_footer_widget_areas' );
-// Hacky fix for Scroll-to-Fixed issue
-// add_action('genesis_before_header', 'add_blank_div', 10);
-// function add_blank_div(){
-// 	echo '<div class="decorative-bar"></div>';
-// }
 
 // Enable shortcode use in widgets
 add_filter('widget_text', 'do_shortcode');
@@ -104,14 +99,17 @@ function rcms_post_info_filter($post_info) {
 		return $post_info;
 	}
 }
-add_action( 'genesis_before', 'pb_move_featured_image' );
+// add_action( 'genesis_before', 'pb_move_featured_image' );
 function pb_move_featured_image(){
 	if( is_front_page()){
 		remove_action( 'genesis_entry_content', 'genesis_do_post_image', 8);
-		remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
-		
 		add_action('genesis_entry_header', 'genesis_do_post_image', 1);
-		add_action( 'genesis_entry_header', 'genesis_do_post_title', 13);
-
+	}
+}
+// Remove title from all pages
+add_action( 'get_header', 'tw_remove_post_titles' );
+function tw_remove_post_titles() {
+	if(is_page()){
+		remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
 	}
 }

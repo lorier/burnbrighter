@@ -117,10 +117,6 @@ function kickstart_background_callback() {
 // Add excerpt support for pages, because pages deserve excerpts too
 // add_post_type_support( 'page', 'excerpt' );
 
-// Image sizes
-add_image_size( 'post_featured', 370, 250, true );
-add_image_size( 'post_medium', 400, 218, true );
-add_image_size( 'post_large', 573, 285, true );
 
 // Allow shortcodes in widgets
 add_filter( 'widget_text', 'do_shortcode' );
@@ -142,16 +138,16 @@ genesis_register_sidebar( array(
 	'description' => __( 'This is the top section of the homepage.', 'lean-kickstart' ),
 ) );
 
-genesis_register_sidebar( array(
-	'id'          => 'before-footer',
-	'name'        => __( 'Before Footer Widgets (Twitter)', 'lean-kickstart' ),
-	'description' => __( 'Works well with the Genesis Latest Tweets plugin.', 'lean-kickstart' ),
-) );
-genesis_register_sidebar( array(
-	'id'          => 'footer-social',
-	'name'        => __( 'After Footer Widgets (Social)', 'lean-kickstart' ),
-	'description' => __( 'Designed to work with the Simple Social Icons widget.', 'lean-kickstart' ),
-) );
+// genesis_register_sidebar( array(
+// 	'id'          => 'before-footer',
+// 	'name'        => __( 'Before Footer Widgets (Twitter)', 'lean-kickstart' ),
+// 	'description' => __( 'Works well with the Genesis Latest Tweets plugin.', 'lean-kickstart' ),
+// ) );
+// genesis_register_sidebar( array(
+// 	'id'          => 'footer-social',
+// 	'name'        => __( 'After Footer Widgets (Social)', 'lean-kickstart' ),
+// 	'description' => __( 'Designed to work with the Simple Social Icons widget.', 'lean-kickstart' ),
+// ) );
 
 // // Move post info above the post title
 // remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );

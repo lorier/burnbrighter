@@ -128,7 +128,7 @@ Site Navigation
 
 //Both Primary and Secondary Nav
 .genesis-nav-menu {
-	clear: both;
+	// clear: both;
 	color: #999;
 	font-size: 12px;
 	font-weight: 600;
@@ -366,6 +366,8 @@ Site Navigation
 //Secondary nav
 #nav-secondary-wrap {
 	position: relative;
+	height: 20px;
+	float: right;
 }
 .nav-secondary {
 	float: right;
@@ -373,6 +375,8 @@ Site Navigation
     z-index: 1002;
     right: 0;
     top: 5px;
+    width: 300px;
+    text-align: right;
     a span {
     	color: $red;
     	text-decoration: underline;
@@ -439,7 +443,7 @@ Site Navigation
 }
 // Navigation
 body .genesis-nav-menu {
-    clear: both;
+    // clear: both;
     font-family: $body-font, sans-serif;
     font-size: 12px;
     font-weight: 400;
@@ -495,7 +499,7 @@ body .genesis-nav-menu {
 		float: right;
 	    display: inline-block;
 	    width: auto;
-	    height: 80px;
+	    height: 100px;
 	    background-color: white;
 	    color: $red;
 	    &:after, &:before {
@@ -507,13 +511,27 @@ body .genesis-nav-menu {
 	    }
 
 	}
-
-	.header-image .site-title {
-		height: 80px;
-	}
-	.header-image .title-area {
+	.title-area {
 		float: left;
-		height: 80px;
+	    height: 80px;
+	    height: 100px;
+	}
+	.site-title {
+		background: url(images/burn_brighter_logo.png) no-repeat center center;
+		background-size: auto 100px;
+		padding: 0;
+		height: 100px;
+	}
+
+	.js .genesis-nav-menu .menu-item {
+		display: block;
+		float: none;
+		margin: 0;
+		position: relative;
+		text-align: left;
+	}
+	.js .genesis-nav-menu .menu-item.mobile-hidden {
+		position: absolute;
 	}
 	//turn off hover for mobile
 	.js nav .genesis-nav-menu .menu-item:hover {
@@ -530,7 +548,7 @@ body .genesis-nav-menu {
 	.js nav .genesis-nav-menu .menu-item a:focus, 
 	.js nav button:focus {
 	    // background-color: transparent;
-		color: $dark-gray;
+		color: $red;
 		outline: none;
 		text-decoration: none;
 	 }
@@ -540,6 +558,9 @@ body .genesis-nav-menu {
 	 		color: $dark-gray;
 	 	}
 	 }
+	nav.nav-primary {
+		border-bottom: 1px solid $gray-rule;
+	}
 	.nav-primary ul {
 		border-top: 1px solid $gray-rule;
 	}
@@ -552,7 +573,6 @@ body .genesis-nav-menu {
 	// sub menu
 	// 
 	.nav-primary .menu-item {
-		border-bottom: 1px solid $gray-rule;
 	}
 	.nav-primary .menu-item .sub-menu  {
 		padding-bottom: 10px;
@@ -673,11 +693,15 @@ body .genesis-nav-menu {
 		    margin-left: -6px;
 		}
 	}
+	.so-widget-sow-button-flat-384499edf124 .ow-button-base a [class^="sow-icon-"] {
+			margin-right: 8px;
+		    margin-left: -6px;
+	}
 }
-
 
 .footer-widget-header-container{
 	background-color: $lightest-gray;
+	padding: 45px 0;
 }
 
 .footer-widgets {
@@ -734,6 +758,9 @@ body .genesis-nav-menu {
 	.widget_nav_menu a {
 		color: $dark-gray;
 	}
+}
+@media screen and (max-width: $mobile-nav-down){
+
 }
 @media screen and (max-width: 780px){
 	

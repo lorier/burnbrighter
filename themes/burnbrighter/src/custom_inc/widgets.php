@@ -21,6 +21,12 @@ function tw_footerwidgetheader_position ()  {
 	echo '</div></div>';
 }
 
+genesis_register_sidebar( array(
+	'id'          => 'home-top-slider',
+	'name'        => __( 'Home Top (Slider)', 'lean-kickstart' ),
+	'description' => __( 'Add a slider (if you must).', 'lean-kickstart' ),
+) );
+
 // Add widget for the sitemap and privacy policy
 // genesis_register_sidebar( array(
 // 	'id'          => 'footer_legal_links',
@@ -36,11 +42,11 @@ function tw_footerwidgetheader_position ()  {
 // Side navigation menus
 
 // Services
-genesis_register_sidebar( array(
-	'id'            => 'plants-sidebar',
-	'name'          => __( 'Plants Sidebar', 'lean-kickstart' ),
-	'description'   => __( 'This is the filtering for plants', 'lean-kickstart' ),
-) );
+// genesis_register_sidebar( array(
+// 	'id'            => 'plants-sidebar',
+// 	'name'          => __( 'Plants Sidebar', 'lean-kickstart' ),
+// 	'description'   => __( 'This is the filtering for plants', 'lean-kickstart' ),
+// ) );
 
 // add_action('genesis_sidebar', 'pb_output_plants_sidebar', 10);
 // function pb_output_plants_sidebar(){

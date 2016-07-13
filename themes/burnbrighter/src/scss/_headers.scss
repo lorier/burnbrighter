@@ -12,33 +12,55 @@
 // 	margin-top: 0;
 // 	height: 355px;
 // }
-// #home-top {
-// 	background: $green url('images/home-top.png') no-repeat center center;
-// 	.widget_text {
-// 		position: relative;
-// 		background-color: transparent;
-// 		left: 43%;
-// 		top: 54px;
-// 		width: auto;
-// 		max-width: 329px;
-// 	}
-// 	.widget_text h1 {
-// 		font-size: 50px;
-// 		line-height: 54px;
-// 		color: $red;
-// 	}
-// 	.widget_text h1 span {
-// 		color: white;
-// 	}
-// 	.widget_text p {
-// 		color: white;
-// 		margin-top: 15px;
-// 		font-size: 23px;
-// 		padding: 0;
-// 		line-height: 27px;
-// 	}
+// 
+//fix for div inserted by the home-top widget/kickstart theme
+.site-container > header+div{
+	height: 105px !important;
+}
+#home-top-slider {
+	background: $lightest-gray url('images/home_bg.jpg') no-repeat center top;
+	position: inherit;
+	margin: 0;
+	height: 461px;
+	padding-top: 70px;
+	#sow-image-3 {
+	    left: 0;
+	    right: 0;
+	    margin-left: auto;
+	    margin-right: auto;
+	    width: 90%;
+	    max-width: 449px;
+	    min-width: 320px;
+	    top: 174px;
+	}
+	.widget_text {
+		position: relative;
+		background-color: transparent;
+		left: 43%;
+		top: 54px;
+		width: auto;
+		max-width: 329px;
+	}
+	.widget_text h1 {
+		font-size: 50px;
+		line-height: 54px;
+		color: $red;
+	}
+	.widget_text h1 span {
+		color: white;
+	}
+	.widget_text p {
+		color: white;
+		margin-top: 15px;
+		font-size: 23px;
+		padding: 0;
+		line-height: 27px;
+	}
+	@media screen and (max-width: 460px){
+		height: 366px;
+	}
 
-// }
+}
 // @media screen and (max-width: 900px){
 // 	.before-content {
 // 		height: 300px;

@@ -16,12 +16,12 @@ $desktop-nav-up: 901px;
 $green: #8ebd54;
 $red: #df5558;
 
-$gray-rule: #E6DDC8;
 $light-gray: #e4e4e4;
 $lightest-gray: #eeeee9;
 $forms-gray: #d3d3d3;
+$gray-rule: $forms-gray;
 $off-white: #eef3db;
-$dark-gray: #312a2a;
+$dark-gray: #3e3636;
 
 $body-font: 'Lato', sans-serif;
 $headline-font: 'Lato', sans-serif;
@@ -46,6 +46,7 @@ body {
 	@media screen and (max-width: $mobile-nav-down){
 		display: none;
 		visibility: hidden;
+
 	}
 }
 .full-width-stretch {
