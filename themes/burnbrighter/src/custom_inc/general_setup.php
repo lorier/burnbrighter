@@ -92,13 +92,7 @@ function tw_force_home_page_layout() {
     }
 }
 
-add_filter( 'genesis_post_info', 'rcms_post_info_filter', 0 );
-function rcms_post_info_filter($post_info) {
-	if ( !is_page() ) {
-		$post_info = '[post_date]';
-		return $post_info;
-	}
-}
+
 // add_action( 'genesis_before', 'pb_move_featured_image' );
 function pb_move_featured_image(){
 	if( is_front_page()){

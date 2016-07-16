@@ -1,9 +1,9 @@
 // // // ==== HEADERS ==== //
 // // Kickstart bulk overrides
-// .before-contact, .before-content, .home-top-slider  {
+// .before-contact, .before-content, .top-header  {
 // 	position: inherit;
 // }
-// .header-image .before-contact, .header-image .before-content, .header-image .home-top-slider{
+// .header-image .before-contact, .header-image .before-content, .header-image .top-header{
 // 	position: inherit;
 // 	margin-bottom: 0;
 // }
@@ -15,15 +15,14 @@
 // 
 //fix for div inserted by the home-top widget/kickstart theme
 .site-container > header+div{
-	height: 105px !important;
+	// height: 105px !important;
 }
-#home-top-slider {
-	background: $lightest-gray url('images/home_bg.jpg') no-repeat center top;
+#top-header {
 	position: inherit;
 	margin: 0;
 	height: 461px;
 	padding-top: 70px;
-	#sow-image-3 {
+	.widget.widget_sow-image {
 	    left: 0;
 	    right: 0;
 	    margin-left: auto;
@@ -59,8 +58,21 @@
 	@media screen and (max-width: 460px){
 		height: 366px;
 	}
-
 }
+.home #top-header {
+	background: $lightest-gray url('images/home_bg.jpg') no-repeat center top;
+}
+.blog #top-header,
+.single #top-header {
+	background: $lightest-gray url('images/red_pattern.jpg') repeat center center;
+}
+.philosophy-page #top-header {
+	background: $lightest-gray url('images/philosophy_hero.jpg') no-repeat center center;
+}
+.program-page #top-header {
+	background: $lightest-gray url('images/program_hero.jpg') no-repeat center center;
+}
+
 // @media screen and (max-width: 900px){
 // 	.before-content {
 // 		height: 300px;

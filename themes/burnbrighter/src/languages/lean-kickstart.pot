@@ -27,7 +27,7 @@ msgid "This is the top section of the homepage."
 msgstr ""
 
 #: .././functions.php:97
-msgid "Home Top (Slider)"
+msgid "Home Top (Headline)"
 msgstr ""
 
 #: .././functions.php:98

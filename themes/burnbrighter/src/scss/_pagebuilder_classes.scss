@@ -19,6 +19,20 @@
 	list-style-type: none;
 
 }
+//checklist bullets {
+.check-list li:before {
+	font-family: FontAwesome;
+    content: '\f00c';
+    position: relative;
+    margin-left: -16px;
+    top: -1px;
+    right: 5px;
+    display: inline-block;
+    text-decoration: none;
+}
+.border-left {
+	border-left: 4px solid white;
+}
 
 .siteorigin-panels-stretch { 
 }

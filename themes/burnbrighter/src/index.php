@@ -1,32 +1,47 @@
 <?php
-// /**
-//  * Plant Blog
-//  *
-//  * @author  Lorie Ransom
-//  * @license GPL-2.0+
-//  * @link    http://tinywhalecreative.com
-//  */
-// echo 'i am index';
-// //* Add support for Genesis Grid Loop
-// remove_action( 'genesis_loop', 'genesis_do_loop' );
-// add_action( 'genesis_loop', 'pb_grid_loop_helper' );
-// function pb_grid_loop_helper() {
-//   if ( function_exists( 'genesis_grid_loop' ) ) {
-// 		genesis_grid_loop( array(
-// 			'features' => 2,
-// 			'feature_image_size' => 0,
-// 			'feature_image_class' => 'alignleft post-image',
-// 			'feature_content_limit' => 0,
-// 			'grid_image_size' => 'grid-thumbnail',
-// 			'grid_image_class' => 'alignleft post-image',
-// 			'grid_content_limit' => 0,
-// 			'more' => __( '[Continue reading...]', 'genesis' ),
-// 		) );
-// 	} else {
-// 		genesis_standard_loop();
-// 	}
-// }
 
-// //* Remove the post meta function for front page only
-// remove_action( 'genesis_entry_footer', 'genesis_post_meta', 10 );
+remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
+add_action('genesis_before_entry', 'genesis_post_info' );
+
+add_filter( 'genesis_post_info', 'pb_single_post_info_filter', 0 );
+
+function pb_single_post_info_filter($post_info) {
+		$post_info = '<span>Posted on [post_date]' . get_the_category_list(' | ');
+		return $post_info;
+}
+
+add_action( 'wp_head', 'tw_blog_page_setup' );
+
+function tw_blog_page_setup() {
+
+	if ( is_active_sidebar( 'blog-top-header' ) ) {
+
+		// Add body class
+		add_filter( 'body_class', 'tw_blog_body_class' );
+		function tw_blog_body_class( $classes ) {
+   			$classes[] = 'blog-page';
+
+  			return $classes;
+		}
+
+		// Force full-width-content layout setting
+		// add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
+
+		// Add homepage top area
+		add_action( 'genesis_after_header', 'tw_blog_top' );
+
+	}
+}
+
+// Setup homepage top area
+function tw_blog_top() {
+	
+	if ( is_active_sidebar( 'blog-top-header' ) ) {
+		genesis_widget_area( 'blog-top-header', array(
+			'before' => '<div id="top-header" class="top-header widget-area"><div class="wrap">',
+			'after'  => '</div></div>',
+		) );
+	}
+}
+
 genesis();

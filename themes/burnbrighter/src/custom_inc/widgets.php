@@ -1,7 +1,5 @@
 <?php
 
-// MCN-Specific functions
-// Add typekit fonts
 
 // Add a Header widget above the others
 add_action ('widgets_init','tw_footerwidgetheader');
@@ -22,36 +20,88 @@ function tw_footerwidgetheader_position ()  {
 }
 
 genesis_register_sidebar( array(
-	'id'          => 'home-top-slider',
-	'name'        => __( 'Home Top (Slider)', 'lean-kickstart' ),
-	'description' => __( 'Add a slider (if you must).', 'lean-kickstart' ),
+	'id'          => 'home-top-header',
+	'name'        => __( 'Home Top (Headline)', 'lean-kickstart' ),
+	'description' => __( 'Add a headline graphic.', 'lean-kickstart' ),
 ) );
 
-// Add widget for the sitemap and privacy policy
-// genesis_register_sidebar( array(
-// 	'id'          => 'footer_legal_links',
-// 	'name'        => __( 'Footer Legal Links', 'lean-kickstart' ),
-// 	'description' => __( 'These are the links below the legal text in the footer', 'lean-kickstart' ),
-// ) );
-// add_action('genesis_footer', 'pb_output_legal_links_widget', 10);
-// function pb_output_legal_links_widget(){
-// 	genesis_widget_area( 'footer_legal_links', array( 'before' => '<div class="legal-links">', 'after' => '</div>') );
-// }
+genesis_register_sidebar( array(
+	'id'          => 'blog-top-header',
+	'name'        => __( 'Blog Top (Headline)', 'lean-kickstart' ),
+	'description' => __( 'Add a headline graphic.', 'lean-kickstart' ),
+) );
+
+genesis_register_sidebar( array(
+	'id'          => 'philosophy-top-header',
+	'name'        => __( 'Philosophy Top (Headline)', 'lean-kickstart' ),
+	'description' => __( 'Add a headline graphic.', 'lean-kickstart' ),
+) );
+genesis_register_sidebar( array(
+	'id'          => 'program-top-header',
+	'name'        => __( 'Program Top (Headline)', 'lean-kickstart' ),
+	'description' => __( 'Add a headline graphic.', 'lean-kickstart' ),
+) );
 
 
-// Side navigation menus
+//Philosophy Header
+add_action( 'wp_head', 'tw_philosophy_top_header' );
 
-// Services
-// genesis_register_sidebar( array(
-// 	'id'            => 'plants-sidebar',
-// 	'name'          => __( 'Plants Sidebar', 'lean-kickstart' ),
-// 	'description'   => __( 'This is the filtering for plants', 'lean-kickstart' ),
-// ) );
+function tw_philosophy_top_header() {
 
-// add_action('genesis_sidebar', 'pb_output_plants_sidebar', 10);
-// function pb_output_plants_sidebar(){
-// 	if ( is_page_template('page-plants.php') ){
-// 		remove_action( 'genesis_sidebar', 'genesis_do_sidebar' );
-// 		genesis_widget_area( 'plants-sidebar', array( 'before' => '<div class="side-menu">', 'after' => '</div>') );
-// 	}
-// }
+	if ( is_page(3) && is_active_sidebar( 'philosophy-top-header' ) ) {
+
+		// Add body class
+		add_filter( 'body_class', 'tw_philosophy_body_class' );
+		function tw_philosophy_body_class( $classes ) {
+   			$classes[] = 'philosophy-page';
+
+  			return $classes;
+		}
+		// Add homepage top area
+		add_action( 'genesis_after_header', 'tw_philosophy_top' );
+
+	}
+}
+
+// Setup homepage top area
+function tw_philosophy_top() {
+	
+	if ( is_active_sidebar( 'philosophy-top-header' ) ) {
+		genesis_widget_area( 'philosophy-top-header', array(
+			'before' => '<div id="top-header" class="top-header widget-area"><div class="wrap">',
+			'after'  => '</div></div>',
+		) );
+	}
+}
+
+
+//Program Header
+add_action( 'wp_head', 'tw_program_top_header' );
+
+function tw_program_top_header() {
+
+	if ( is_page(4) && is_active_sidebar( 'program-top-header' ) ) {
+
+		// Add body class
+		add_filter( 'body_class', 'tw_program_body_class' );
+		function tw_program_body_class( $classes ) {
+   			$classes[] = 'program-page';
+
+  			return $classes;
+		}
+		// Add homepage top area
+		add_action( 'genesis_after_header', 'tw_program_top' );
+
+	}
+}
+
+// Setup homepage top area
+function tw_program_top() {
+	
+	if ( is_active_sidebar( 'program-top-header' ) ) {
+		genesis_widget_area( 'program-top-header', array(
+			'before' => '<div id="top-header" class="top-header widget-area"><div class="wrap">',
+			'after'  => '</div></div>',
+		) );
+	}
+}
