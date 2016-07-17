@@ -15,7 +15,18 @@ function tw_secondary_nav(){
 	echo '</div>';
 }
 
+//Reoposition and format post info
+remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
+add_action('genesis_before_entry', 'genesis_post_info' );
 
+add_filter( 'genesis_post_info', 'pb_single_post_info_filter', 0 );
+
+function pb_single_post_info_filter($post_info) {
+		$post_info = '<span>Posted on [post_date]'.'&nbsp;&nbsp;|&nbsp;&nbsp;' . get_the_category_list(' | ');
+		return $post_info;
+}
+
+add_action( 'wp_head', 'tw_blog_page_setup' );
 //add featured image to posts
 add_action( 'genesis_entry_content', 'pb_featured_post_image', 8 );
 function pb_featured_post_image() {
@@ -39,35 +50,35 @@ add_action( 'genesis_footer', 'genesis_footer_widget_areas' );
 add_filter('widget_text', 'do_shortcode');
 
 // Add "now viewing" to tag pages 
-add_action('genesis_before_loop', 'rcms_add_tag_title');
+add_action('genesis_before_loop', 'tw_add_tag_title');
 
-function rcms_add_tag_title(){
+function tw_add_tag_title(){
 	if (is_tag()){
 		echo '<p class="tag-title">Viewing items tagged:</p>';
 	}
 }
 // Change pagination button text 
-add_filter( 'genesis_prev_link_text', 'rcms_review_prev_link_text' );
-function rcms_review_prev_link_text() {
+add_filter( 'genesis_prev_link_text', 'tw_review_prev_link_text' );
+function tw_review_prev_link_text() {
         $prevlink = 'Newer Posts';
         return $prevlink;
 }
-add_filter( 'genesis_next_link_text', 'rcms_review_next_link_text' );
-function rcms_review_next_link_text() {
+add_filter( 'genesis_next_link_text', 'tw_review_next_link_text' );
+function tw_review_next_link_text() {
         $nextlink = 'Older Posts';
         return $nextlink;
 }
 
 // Change post meta text
-add_filter( 'genesis_post_meta', 'rcms_post_meta_filter' );
-function rcms_post_meta_filter($post_meta) {
+add_filter( 'genesis_post_meta', 'tw_post_meta_filter' );
+function tw_post_meta_filter($post_meta) {
 if ( !is_page() ) {
 	$post_meta = '[post_tags before="Tagged: "] [post_comments] [post_edit]';
 	return $post_meta;
 }}
 
-add_filter('get_the_archive_title', 'rcms_add_tag_leader_text');
-function rcms_add_tag_leader_text($title){
+add_filter('get_the_archive_title', 'tw_add_tag_leader_text');
+function tw_add_tag_leader_text($title){
 	echo 'filter called';
 	$prefix = '';
 	if ( is_tag() ) {
@@ -79,8 +90,8 @@ function rcms_add_tag_leader_text($title){
 // remove genesis favicon
 remove_action('genesis_meta', 'genesis_load_favicon');
 
-add_filter( 'genesis_pre_load_favicon', 'rcms_favicon_filter' );
-function rcms_favicon_filter( $favicon_url ) {
+add_filter( 'genesis_pre_load_favicon', 'tw_favicon_filter' );
+function tw_favicon_filter( $favicon_url ) {
 	$base = get_stylesheet_directory_uri();
 	return  esc_url($base) . 'images/favicon.ico';
 }

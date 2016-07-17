@@ -28,15 +28,15 @@
 }
 .entry-meta {
 	color: $dark-gray;
-	font-size: 14px;
-	font-weight: 300;
-	font-family: $body-font, sans-serif;
-	letter-spacing: .01em;
+	font-size: 13px;
+	font-weight: 700;
+	font-family: $headline-font, sans-serif;
+	letter-spacing: $raleway-spacing;
 	text-transform: uppercase;
 }
 
 .entry-meta a {
-	color: $dark-gray;
+	color: $green;
 }
 
 .entry-header .entry-meta {

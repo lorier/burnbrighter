@@ -1,7 +1,7 @@
 <?php
 // enable viewing of subpages in a temporary nav panel
 // add_action('genesis_before_content', 'sg_temporary_nav');
-function rcms_temporary_nav(){
+function tw_temporary_nav(){
     if(is_page(611) || is_page(609)){
         global $post;
         $parentID = wp_get_post_parent_id( $post->ID );
@@ -34,7 +34,7 @@ function tw_setup_livereload(){
     }
 }
 // Make variable output pretty
-function rcms_print_pre($value) {
+function tw_print_pre($value) {
     echo "<pre>",print_r($value, true),"</pre>";
 }
 

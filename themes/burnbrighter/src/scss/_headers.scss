@@ -65,12 +65,21 @@
 .blog #top-header,
 .single #top-header {
 	background: $lightest-gray url('images/red_pattern.jpg') repeat center center;
+	height: 360px;
+	.widget.widget_sow-image {
+		max-width: 550px;	
+	}
+
 }
 .philosophy-page #top-header {
 	background: $lightest-gray url('images/philosophy_hero.jpg') no-repeat center center;
+	.widget.widget_sow-image {
+		max-width: 390px;	
+	}
 }
 .program-page #top-header {
 	background: $lightest-gray url('images/program_hero.jpg') no-repeat center center;
+
 }
 
 // @media screen and (max-width: 900px){

@@ -28,13 +28,13 @@ function kickstart_fonts_scripts() {
 	wp_enqueue_style( 'smitten-font', get_stylesheet_directory_uri() . '/webfonts/Smitten-Regular.css', array(), CHILD_THEME_VERSION );
 	wp_enqueue_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', array(), '4.5.0' );
 	wp_enqueue_style( 'google-font-lato', '//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic', array(), CHILD_THEME_VERSION );
-	wp_enqueue_style( 'google-font-raleway', '//fonts.googleapis.com/css?family=Raleway:400,700', array(), CHILD_THEME_VERSION );
+	wp_enqueue_style( 'google-font-raleway', '//fonts.googleapis.com/css?family=Raleway:400,600,700', array(), CHILD_THEME_VERSION );
 	
 }
 
 
-add_action( 'wp_enqueue_scripts', 'rcms_enqueue_stickynav_script' );
-function rcms_enqueue_stickynav_script() {
+add_action( 'wp_enqueue_scripts', 'tw_enqueue_stickynav_script' );
+function tw_enqueue_stickynav_script() {
 	wp_enqueue_script( 'sample-sticky-menu', get_stylesheet_directory_uri() . '/js/stickynav.js', array( 'jquery' ), '1.0.0' );
 	wp_enqueue_script( 'core', get_stylesheet_directory_uri() . '/js/core.js', array( 'jquery' ), '1.0.0' );
 	//provided with the Smitten Font
@@ -204,8 +204,8 @@ function kickstart_single_next_prev() {
 	echo '</div>';
 }
 //Include MCN-specific Function files
-// add_action('wp_head', 'rcms_favicons' );
-function rcms_favicons(){
+// add_action('wp_head', 'tw_favicons' );
+function tw_favicons(){
 	$blog_url = esc_url( get_stylesheet_directory_uri() ); 
 	echo 
 <<<EOT

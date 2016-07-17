@@ -60,7 +60,7 @@ textarea:focus {
 }
 .sidebar .widget input[type="search"],
 input[type="search"] {
-	border: 1px solid white;
+	border: 1px solid $forms-gray;
 	color: $gray-rule;
 	background-color: white;
 	text-transform: none;

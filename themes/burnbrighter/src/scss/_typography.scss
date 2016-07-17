@@ -85,18 +85,8 @@ blockquote::before {
 
 blockquote {
 	padding-left: 15px;
-	border-left: 5px solid $red;
+	border-left: 5px solid $forms-gray;
 }
-
-// blockquote::before {
-// 	content: "\201C";
-// 	display: block;
-// 	font-size: 30px;
-// 	height: 0;
-// 	left: -20px;
-// 	position: relative;
-// 	top: -10px;
-// }
 
 .entry-content code {
 	background-color: #333;
@@ -175,7 +165,7 @@ img {
 	// line-height: 1;
 }
 .entry-title a {
-	color: $dark-gray;
+	color: $red;
 }
 
 .page-template-default .entry-title,
@@ -202,11 +192,14 @@ img {
 }
 
 .widget-title {
-	color: $green;
+	color: $dark-gray;
 	font-size: 20px;
-	font-weight: 300;
+	font-weight: 700;
 	margin-bottom: 10px;
-	// text-transform: uppercase;
+	text-transform: uppercase;
+	font-family: $navigation-font;
+	font-size: 16px;
+	letter-spacing: $raleway-spacing;
 }
 
 .sidebar .widget-title a {

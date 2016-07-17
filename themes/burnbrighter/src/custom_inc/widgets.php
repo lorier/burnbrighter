@@ -62,8 +62,7 @@ function tw_philosophy_top_header() {
 
 	}
 }
-
-// Setup homepage top area
+// Setup philosophy top area
 function tw_philosophy_top() {
 	
 	if ( is_active_sidebar( 'philosophy-top-header' ) ) {
@@ -73,7 +72,6 @@ function tw_philosophy_top() {
 		) );
 	}
 }
-
 
 //Program Header
 add_action( 'wp_head', 'tw_program_top_header' );
@@ -94,12 +92,46 @@ function tw_program_top_header() {
 
 	}
 }
-
 // Setup homepage top area
 function tw_program_top() {
 	
 	if ( is_active_sidebar( 'program-top-header' ) ) {
 		genesis_widget_area( 'program-top-header', array(
+			'before' => '<div id="top-header" class="top-header widget-area"><div class="wrap">',
+			'after'  => '</div></div>',
+		) );
+	}
+}
+
+//Set up blog and single
+add_action( 'wp_head', 'tw_blog_page_setup' );
+
+function tw_blog_page_setup() {
+
+	if ( !is_page() && is_active_sidebar( 'blog-top-header' ) ) {
+
+		// Add body class
+		add_filter( 'body_class', 'tw_blog_body_class' );
+		function tw_blog_body_class( $classes ) {
+   			$classes[] = 'blog-page';
+
+  			return $classes;
+		}
+
+		// Force full-width-content layout setting
+		// add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
+
+		// Add homepage top area
+		add_action( 'genesis_after_header', 'tw_blog_top' );
+
+	}
+}
+
+// Setup homepage top area
+function tw_blog_top() {
+	
+	if ( is_active_sidebar( 'blog-top-header' ) ) {
+		genesis_widget_area( 'blog-top-header', array(
 			'before' => '<div id="top-header" class="top-header widget-area"><div class="wrap">',
 			'after'  => '</div></div>',
 		) );
