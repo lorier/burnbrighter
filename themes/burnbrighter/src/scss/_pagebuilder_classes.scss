@@ -17,7 +17,6 @@
 }
 .no-bullets ul li{
 	list-style-type: none;
-
 }
 //checklist bullets {
 .check-list li:before {
@@ -47,8 +46,7 @@
 .red-title h2,
 .red-title h3,
 .red-title h4,
-.red-title h5,
-.red-hr hr{
+.red-title h5{
 	color: $red
 }
 
@@ -84,10 +82,20 @@
 // 	font-size: 30px;
 // }
 .short-hr hr {
-	width: 80px;
+	width: 170px;
 	color: $dark-gray;
-	border-color: $dark-gray;
+	background-color: $dark-gray;
+	height: 3px;
+	border: 0 none;
 }
+.red-hr hr{
+	color: $red;
+	background-color: $red;
+}
+.left-hr hr{
+	margin-left: 0;
+}
+
 .no-bottom-margin h2,
 .no-bottom-margin h3,
 .no-bottom-margin h4,
@@ -107,9 +115,7 @@
 	letter-spacing: .06em;
 	font-weight: 700;
 }
-.arrow-border {
-	
-}
+
 @media screen and (min-width: $desktop-nav-up){
 	.careers-widget {
 		max-width: 450px;
@@ -128,10 +134,18 @@
 	}
 
 }
+// Inked accordion
+#faq-accordion .faq .accordion-navigation > a {
+	padding: 0;
+}
+#faq-accordion .faq .content {
+	padding: 0;
+}
 
-//height of panels for expertise page
-
-
+//Philosophy page
+#philosophy .widget_sow-image {
+	margin-bottom: 0 !important;
+}
 
 
 // wire buttons
