@@ -1,0 +1,51 @@
+// Sticky Posts on Home Page
+
+
+.sticky-panel-wrapper {
+	width: 30%;
+	margin-right: 2%;
+	float: left;	
+}
+.sticky-panel {
+	.sticky-image{
+		position: relative;
+		max-width: 308px;
+		height: 400px;
+	    background-color: gray;
+	}
+	img {
+		width: 100%;
+	}
+}
+.sticky-category {
+	position: absolute;
+	bottom: 16px;
+	left: 0;
+
+	display: inline-block;
+	background-color: $green;
+	color: white;
+	text-transform: uppercase;
+	font-family: $navigation-font;
+	font-weight: 700;
+	letter-spacing: $raleway-spacing;
+	padding: 3px 15px;
+	font-size: 14px;
+}
+.sticky-title {
+	margin-top: 10px;
+}
+@media screen and (max-width: $mobile-nav-down){
+	.sticky-panel-wrapper {
+		float: none;
+		display: block;
+		width: 100%;
+	}
+	.sticky-image,
+	{
+		margin: 0 auto;
+	}
+	.sticky-title  {
+		text-align: center;
+	}
+}

@@ -17,7 +17,7 @@ function tw_secondary_nav(){
 
 //Reoposition and format post info
 remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
-add_action('genesis_before_entry', 'genesis_post_info' );
+add_action('genesis_entry_header', 'genesis_post_info', 9 );
 
 add_filter( 'genesis_post_info', 'pb_single_post_info_filter', 0 );
 

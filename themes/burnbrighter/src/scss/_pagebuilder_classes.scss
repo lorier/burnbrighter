@@ -29,9 +29,15 @@
     right: 5px;
     display: inline-block;
     text-decoration: none;
+    color: white;
 }
+.check-list ul li {
+	list-style-type: none;
+}
+
 .border-left {
 	border-left: 4px solid white;
+	padding-left: 20px;
 }
 
 .siteorigin-panels-stretch { 
@@ -46,6 +52,37 @@
 	color: $red
 }
 
+
+// Home Page
+.arrow-border {
+
+	background-image: url('images/green_triangles_up.png'),url('images/green_triangles.png');
+	background-position: left top, left bottom;
+	background-repeat: repeat-x, repeat-x;
+
+	margin-top: 50px;
+	
+	display: inline-block;
+	padding-top: 20px;
+	padding-bottom: 10px;
+}
+.arrow-red {
+	background-image: url('images/red_triangles_up.png'),url('images/red_triangles.png');
+}
+
+.more-time {
+	line-height: 0;
+	img {
+		width: inherit;
+		height: inherit;
+	}
+}
+// .arrow-border .textwidget:after {
+// 	content: '\f0d7\2009\f0d7\2009\f0d7\2009\f0d7\2009\f0d7\2009\f0d7\2009\f0d7\2009\f0d7\2009\f0d7\2009\f0d7\2009\f0d7\2009\f0d7\2009';
+// 	font-family: FontAwesome;
+// 	color: $dark-green;
+// 	font-size: 30px;
+// }
 .short-hr hr {
 	width: 80px;
 	color: $dark-gray;
