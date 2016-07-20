@@ -2,10 +2,13 @@
 
 
 .sticky-panel-wrapper {
-	width: 30%;
+	width: 32%;
 	margin-right: 2%;
-	float: left;	
+	float: left;
 }
+.sticky-wrapper a:last-child .sticky-panel-wrapper {
+		margin-right: 0;
+	}	
 .sticky-panel {
 	.sticky-image{
 		position: relative;

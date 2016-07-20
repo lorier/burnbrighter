@@ -75,12 +75,6 @@
 		height: inherit;
 	}
 }
-// .arrow-border .textwidget:after {
-// 	content: '\f0d7\2009\f0d7\2009\f0d7\2009\f0d7\2009\f0d7\2009\f0d7\2009\f0d7\2009\f0d7\2009\f0d7\2009\f0d7\2009\f0d7\2009\f0d7\2009';
-// 	font-family: FontAwesome;
-// 	color: $dark-green;
-// 	font-size: 30px;
-// }
 .short-hr hr {
 	width: 170px;
 	color: $dark-gray;
@@ -134,7 +128,128 @@
 	}
 
 }
-// Inked accordion
+// Program accordion 
+.program-accordion {
+	.content {
+		float: none;
+	}
+	.sow-icon-fontawesome {
+
+	}
+	.accordion {
+		background-color: white;
+	}
+	li.accordion-navigation {
+		border-bottom: 1px solid $lightest-gray;
+		background-image: url(images/go.png);
+		background-position: 30px 26px;
+		background-size: 80px 80px;
+		background-repeat: no-repeat;
+		padding-left: 120px;
+		min-height: 133px;
+	}
+	li.accordion-navigation:nth-child(2){
+		background-image: url(images/zero.png);
+	}
+	li.accordion-navigation:nth-child(3){
+			background-image: url(images/one.png);
+		}
+	li.accordion-navigation:nth-child(4){
+			background-image: url(images/two.png);
+		}
+	li.accordion-navigation:nth-child(5){
+			background-image: url(images/three.png);
+		}
+	li.accordion-navigation:nth-child(6){
+			background-image: url(images/four.png);
+		}
+	li.accordion-navigation:nth-child(7){
+			background-image: url(images/five.png);
+		}
+	li.accordion-navigation:nth-child(8){
+			background-image: url(images/six.png);
+		}
+	li.accordion-navigation:nth-child(9){
+			background-image: url(images/seven.png);
+		}
+	li.accordion-navigation:nth-child(10){
+			background-image: url(images/eight.png);
+		}
+	li.accordion-navigation:nth-child(11){
+		background-image: url(images/bonus.png);
+	}
+
+
+	.accordion-navigation > a {
+		font-size: 24px !important;
+		line-height: 28px;
+		padding-right: 150px !important;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+	.accordion-navigation > a:before {
+		display: block;
+		color: $red;
+		text-transform: uppercase;
+		margin-bottom: 0;
+		font-size: 14px;
+
+	}
+	a[href='#ardn-578e705e67736-1']:before {
+		content: 'Running Start \2014  Available immediately after you register';
+	}
+	a[href='#ardn-578e705e67736-2']:before {
+		content: 'Pre\2013Program Homework';
+	}
+	a[href='#ardn-578e705e67736-3']:before {
+		content: 'Module 1 \2014   Skyrocket your Metabolism';
+	}
+	a[href='#ardn-578e705e67736-4']:before {
+		content: 'Module 2 \2014  Top Foods to Toss now';
+	}
+	a[href='#ardn-578e705e67736-5']:before {
+		content: 'Module 3 \2014  The last cleanse you’ll ever need';
+	}
+	a[href='#ardn-578e705e67736-6']:before {
+		content: 'Module 4 \2014  Carb Monster';
+	}
+	a[href='#ardn-578e705e67736-7']:before {
+		content: 'WEEK 5 \2014  Catch up, Rest Up & Be Heard!';
+	}
+	a[href='#ardn-578e705e67736-8']:before {
+		content: 'Module 6 \2014  Why Paleo Works, Pure and Simple';
+	}
+	a[href='#ardn-578e705e67736-9']:before {
+		content: 'Module 7 \2014  Stop Fearing Fats';
+	}
+	a[href='#ardn-578e705e67736-10']:before {
+		content: 'Module 8 \2014  Power up with Protein';
+	}
+	a[href='#ardn-578e705e67736-11']:before {
+		content: 'BONUS SECTION!';
+	}
+
+	.accordion .accordion-navigation a span {
+		top:22px;
+		right: 19px !important;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+	.accordion-navigation.active .content.active li:before {
+		font-family: FontAwesome;
+	    content: '\f00c';
+	    position: relative;
+	    margin-left: -16px;
+	    top: -1px;
+	    right: 5px;
+	    display: inline-block;
+	    text-decoration: none;
+	}
+}
+
+// FAQ accordion
 #faq-accordion .faq .accordion-navigation > a {
 	padding: 0;
 }
