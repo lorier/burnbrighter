@@ -2,9 +2,9 @@
 /**
  * @wordpress-plugin
  * Plugin Name:       Widgets for SiteOrigin
- * Plugin URI:        https://wpinked.com/
- * Description:       A few more widgets to play around with. Built on top of the SiteOrigin Widgets Bundle.
- * Version:           1.2.2
+ * Plugin URI:        https://widgets.wpinked.com/
+ * Description:       A collection of highly customizable and thoughtfully crafted widgets. Built on top of the SiteOrigin Widgets Bundle.
+ * Version: 1.2.3
  * Author:            wpinked
  * Author URI:        wpinked.com
  * License:           GPL-2.0+
@@ -18,7 +18,13 @@
  *
  */
 
-define('INKED_SO_WIDGETS', '1.2.2');
+define( 'INKED_SO_VER', '1.2.2' );
+
+// Allow JS suffix to be pre-set
+if( !defined( 'INKED_JS_SUFFIX' ) ) {
+
+	define('INKED_JS_SUFFIX', '.min');
+}
 
 require_once ( 'inc/visibility.php' );
 
@@ -27,73 +33,69 @@ require_once ( 'inc/enqueue.php' );
 require_once ( 'inc/functions.php' );
 
 // Widgets.... Come out and play!
-function wpinked_so_widgets_collection($folders){
+function wpINKED_SO_VER_collection($folders){
 	$folders[] = plugin_dir_path(__FILE__) . '/widgets/';
 	return $folders;
 }
-add_filter('siteorigin_widgets_widget_folders', 'wpinked_so_widgets_collection');
+add_filter( 'siteorigin_widgets_widget_folders', 'wpINKED_SO_VER_collection' );
 
 // Placing all widgets under the 'Widgets for SiteOrigin' Tab
 function wpinked_so_add_widget_tabs($tabs) {
 	$tabs[] = array(
-		'title' => __('Widgets for SiteOrigin', 'wpinked-widgets'),
+		'title' => __( 'Widgets for SiteOrigin', 'wpinked-widgets' ),
 		'filter' => array(
-			'groups' => array('widgets-for-so')
+			'groups' => array( 'widgets-for-so' )
 		)
 	);
 	return $tabs;
 }
-add_filter('siteorigin_panels_widget_dialog_tabs', 'wpinked_so_add_widget_tabs', 20);
+add_filter( 'siteorigin_panels_widget_dialog_tabs', 'wpinked_so_add_widget_tabs', 20);
 
 // Adding Icon for all Widgets
 function wpinked_so_widget_add_bundle_groups($widgets){
 	foreach( $widgets as $class => &$widget ) {
-		if( preg_match('/Inked_(.*)_SO_Widget/', $class, $matches) ) {
+		if( preg_match( '/Inked_(.*)_SO_Widget/', $class, $matches) ) {
 			$widget['icon'] = 'wpinked-widget dashicons dashicons-editor-code';
-			$widget['groups'] = array('widgets-for-so');
+			$widget['groups'] = array( 'widgets-for-so' );
 		}
 	}
 	return $widgets;
 }
-add_filter('siteorigin_panels_widgets', 'wpinked_so_widget_add_bundle_groups', 11);
+add_filter( 'siteorigin_panels_widgets', 'wpinked_so_widget_add_bundle_groups', 11);
 
 // Making the plugin translation ready
 function wpinked_so_translation() {
 	load_plugin_textdomain( 'wpinked_widgets', false, dirname( plugin_basename(__FILE__) ) . '/languages/' );
 }
-add_action('plugins_loaded', 'wpinked_so_translation');
+add_action( 'plugins_loaded', 'wpinked_so_translation' );
 
-/**
- * This clears the file cache.
- *
- * @action admin_init
- */
-function wpinked_so_plugin_version_check(){
+// Create a helper function for easy SDK access.
+function wpinkedwidgets() {
+    global $wpinkedwidgets;
 
-	$active_version = get_option( 'wpinked_so_widgets_version' );
+    if ( ! isset( $wpinkedwidgets ) ) {
+        // Include Freemius SDK.
+        require_once dirname(__FILE__) . '/freemius/start.php';
 
-	if( empty($active_version) || version_compare( $active_version, INKED_SO_WIDGETS, '<' ) ) {
-		// If this is a new version, then clear the cache.
-		update_option( 'wpinked_so_widgets_version', INKED_SO_WIDGETS );
+        $wpinkedwidgets = fs_dynamic_init( array(
+            'id'                => '341',
+            'slug'              => 'wpinked-widgets',
+            'public_key'        => 'pk_7ebc491e750cd32db6fb5681d1bcf',
+            'is_premium'        => false,
+            'has_addons'        => false,
+            'has_paid_plans'    => false,
+            'menu'              => array(
+                'slug'       => 'wpinked-widgets',
+                'first-path' => 'plugins.php',
+                'account'    => false,
+                'contact'    => false,
+                'support'    => false,
+            ),
+        ) );
+    }
 
-		// Remove all cached CSS for SiteOrigin Widgets
-		if( function_exists('WP_Filesystem') && WP_Filesystem() ) {
-			global $wp_filesystem;
-			$upload_dir = wp_upload_dir();
-
-			// Remove any old widget cache files, if they exist.
-			$list = $wp_filesystem->dirlist( $upload_dir['basedir'] . '/siteorigin-widgets/' );
-			if( !empty($list) ) {
-				foreach($list as $file) {
-					// Delete the file
-					$wp_filesystem->delete( $upload_dir['basedir'] . '/siteorigin-widgets/' . $file['name'] );
-				}
-			}
-		}
-
-		// An action to let widgets handle the updates.
-		do_action( 'siteorigin_widgets_version_update', INKED_SO_WIDGETS, $active_version );
-	}
-
+    return $wpinkedwidgets;
 }
-add_action( 'admin_init', 'wpinked_so_plugin_version_check' );
+
+// Init Freemius.
+wpinkedwidgets();

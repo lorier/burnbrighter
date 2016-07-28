@@ -8,10 +8,10 @@
 @title-h: #666;
 @title-h-bg: transparent;
 
-.accordion .accordion-navigation {
+.iw-so-accordion .iw-so-acc-item {
 	.gap() when (@gap = 1) { margin-bottom: 12px; }
 	.gap();
-	a {
+	.iw-so-acc-title {
 		background: @title-bg;
 		color: @title;
 
@@ -25,8 +25,8 @@
 		}
 
 		span {
-			.icon-pos() when (@icon = right) { right: 10px; }
-			.icon-pos() when (@icon = left) { left: 10px; }
+			.icon-pos() when (@icon = right) { right: 7px; }
+			.icon-pos() when (@icon = left) { left: 7px; }
 			.icon-pos();
 		}
 
@@ -38,7 +38,7 @@
 			color: @icon-open;
 		}
 	}
-	.content {
+	.iw-so-acc-content {
 		background: @cont-bg;
 	}
 }

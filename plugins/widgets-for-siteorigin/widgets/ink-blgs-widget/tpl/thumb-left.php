@@ -1,93 +1,93 @@
 <?php
 
+// Styling the format icons
 $icon_styles = array();
 if(!empty($instance['icons']['color'])) $icon_styles[] = 'color: '.$instance['icons']['color'];
 if(!empty($instance['icons']['size'])) $icon_styles[] = 'font-size: '.$instance['icons']['size'];
 
-$btn_class = array('iw-so-article-btn');
+// Adding classes for the read more button
+$btn_class = array( 'iw-so-article-btn' );
 if( !empty($instance['styling']['btn-hover']) ) $btn_class[] = 'iw-so-article-btn-hover';
 if( !empty($instance['styling']['btn-click']) ) $btn_class[] = 'iw-so-article-btn-click';
 
-$navi_class = array('iw-so-navi-btn');
-if( !empty($instance['pagination']['btn-hover']) ) $navi_class[] = 'iw-so-navi-btn-hover';
-if( !empty($instance['pagination']['btn-click']) ) $navi_class[] = 'iw-so-navi-btn-click';
+// Setting up the blog navigation
+$navi_class = array( 'iw-so-navi-btn' );
+if( !empty( $instance['pagination']['btn-hover'] ) ) $navi_class[] = 'iw-so-navi-btn-hover';
+if( !empty( $instance['pagination']['btn-click'] ) ) $navi_class[] = 'iw-so-navi-btn-click';
+if( $instance['pagination']['type'] == 'ajax' ) $navi_class[] = 'iw-so-navi-ajax';
+$navi_attributes = esc_attr( implode( ' ', $navi_class) );
+$navi_previous = siteorigin_widget_get_icon( $instance['pagination']['newer-icon'] ) . ' ' . esc_html( $instance['pagination']['newer-text'] );
+$navi_next = esc_html( $instance['pagination']['older-text'] ) . ' ' . siteorigin_widget_get_icon( $instance['pagination']['older-icon'] );
 
-$navi_attributes = esc_attr(implode(' ', $navi_class));
-
-$navi_previous = siteorigin_widget_get_icon( $instance['pagination']['newer-icon'] ) . ' ' . $instance['pagination']['newer-text'];
-$navi_next = $instance['pagination']['older-text'] . ' ' . siteorigin_widget_get_icon( $instance['pagination']['older-icon'] );
-
+// Adding columns classes
 if( $instance['design']['columns'] == 1 ):
-	$cols = ' iw-small-12';
+	$columns = ' iw-so-blog-one-column';
 elseif( $instance['design']['columns'] == 2 ):
-	$cols = ' iw-medium-6 iw-small-12';
+	$columns = ' iw-so-blog-two-column';
 elseif( $instance['design']['columns'] == 3 ):
-	$cols = ' iw-large-4 iw-medium-6 iw-small-12';
+	$columns = ' iw-so-blog-three-column';
 elseif( $instance['design']['columns'] == 4 ):
-	$cols = ' iw-large-3 iw-medium-6 iw-small-12';
+	$columns = ' iw-so-blog-four-column';
 endif;
 
+// Adding image and content classes
 if ( $instance['design']['responsive'] ):
-	$img_col_class = ' iw-large-4 iw-medium-5';
-	$ctnt_col_class = ' iw-large-8 iw-medium-7';
+	$article_mobile = ' iw-so-blog-article-responsive';
 else:
-	$img_col_class = ' iw-large-4 iw-medium-5 iw-small-4';
-	$ctnt_col_class = ' iw-large-8 iw-medium-7 iw-small-8';
+	$article_mobile = ' iw-so-blog-article-fixed';
 endif;
 
-if( !empty($instance['title']) ) echo $args['before_title'] . esc_html($instance['title']) . $args['after_title'];
+// Adding class for articles of same height
+$height = $instance['design']['equalizer'] ? ' iw-so-blog-equal-height' : '';
 
+// Setting up the article heading tag
 $h = $instance['design']['title-tag'];
 
-$unique = $instance['_sow_form_id'];
+// Adding using id for this widget
+$unique = $instance['pagination']['id'];
 
+// Initializing column class count
 $count = 1;
-?>
 
-<?php
 // Setting up posts query
 global $paged, $query_result;
-
 $this_post = get_the_ID();
+$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 
-$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
-
+// Setting up query
 $post_selector_pseudo_query = $instance['posts'];
 $processed_query = siteorigin_widget_post_selector_process_query( $post_selector_pseudo_query );
-
+// Adding pagination
 if ( $instance['pagination']['activate'] ):
 	$processed_query['paged'] = $paged;
 endif;
-
+// Excluding current post
 if( $instance['current'] ):
-	$processed_query['post__not_in'] = array($this_post);
+	$processed_query['post__not_in'] = array( $this_post );
 endif;
-
 $query_result = new WP_Query( $processed_query );
 ?>
 
-<?php
+<?php if( !empty( $instance['title'] ) ) echo $args['before_title'] . esc_html( $instance['title'] ) . $args['after_title']; // Displaying the widget title ?>
 
-// Looping through the posts
+<?php if( $query_result->have_posts() ) : // Looping through the posts ?>
 
-if($query_result->have_posts()) : ?>
+	<div class="iw-so-blog">
 
-	<div id="<? echo $unique; ?>">
+		<div id="<? echo $unique; ?>">
 
-		<div class="iw-row" data-equalizer>
+			<div class="iw-so-blog-container<?php echo $height; ?>">
 
-			<?php while($query_result->have_posts()) : $query_result->the_post(); ?>
+				<?php while( $query_result->have_posts() ) : $query_result->the_post(); ?>
 
-				<div class="iw-so-article<?php echo $cols; ?> iw-cols <?php wpinked_so_blog_post_col( $count, $instance['design']['columns'] ); ?>" data-equalizer-watch>
+					<div class="iw-so-article iw-so-thumb-left<?php echo $columns; ?> <?php wpinked_so_blog_post_col( $count, $instance['design']['columns'] ); ?>">
 
-					<div class="iw-row iw-so-thumb-left">
+						<?php if( has_post_thumbnail() ): ?>
 
-						<div class="iw-left iw-cols<?php echo $img_col_class; ?>">
+							<div class="iw-so-article-thumb<?php echo $article_mobile; ?>">
 
-							<div class="iw-so-article-thumb">
-
-								<a href="<?php the_permalink(); ?>">
-									<center><?php the_post_thumbnail($instance['design']['img-size']); ?></center>
+								<a href="<?php echo esc_url( get_permalink() ); ?>">
+									<center><?php the_post_thumbnail( $instance['design']['img-size'] ); ?></center>
 									<?php
 									if ( get_post_format() && $instance['design']['format'] ):
 										echo siteorigin_widget_get_icon( $instance['icons'][get_post_format()], $icon_styles );
@@ -99,32 +99,24 @@ if($query_result->have_posts()) : ?>
 
 							</div>
 
-						</div>
+						<?php endif; ?>
 
-						<div class="iw-right iw-cols<?php echo $ctnt_col_class; ?>">
+						<div class="iw-so-article-content<?php echo $article_mobile; ?><?php echo ( !has_post_thumbnail() ? ' iw-so-article-no-thumb' : '' ); ?>">
 
 							<?php if ($instance['design']['byline-above']) : ?>
 
-								<?php $byline_above = apply_filters( 'wpinked_byline', $instance['design']['byline-above'] ); ?>
-
-								<p class="iw-so-article-byline-above <?php echo $instance['styling']['align']; ?>">
-
-									<?php echo sprintf( $byline_above, get_the_date(), get_the_category_list($instance['design']['cats']), '<a href="' . get_author_posts_url( $id ) . '">' . get_the_author() . '</a>', get_comments_number() ); ?>
-
+								<p class="iw-so-article-byline-above <?php echo esc_attr( $instance['styling']['align'] ); ?>">
+									<?php wpinked_so_post_byline( $instance['design']['byline-above'], get_the_ID(), $instance['design']['cats'] ); ?>
 								</p>
 
 							<?php endif; ?>
 
-							<<?php echo $h; ?> class="iw-so-article-title <?php echo $instance['styling']['align']; ?>"><a href="<?php the_permalink(); ?>"><?php the_title() ?></a></<?php echo $h; ?>>
+							<<?php echo $h; ?> class="iw-so-article-title <?php echo $instance['styling']['align']; ?>"><a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_title() ?></a></<?php echo $h; ?>>
 
 							<?php if ($instance['design']['byline-below']) : ?>
 
-								<?php $byline_below = apply_filters( 'wpinked_byline', $instance['design']['byline-below'] ); ?>
-
-								<p class="iw-so-article-byline-below <?php echo $instance['styling']['align']; ?>">
-
-									<?php echo sprintf( $byline_below, get_the_date(), get_the_category_list($instance['design']['cats']), '<a href="' . get_author_posts_url( $id ) . '">' . get_the_author() . '</a>', get_comments_number() ); ?>
-
+								<p class="iw-so-article-byline-below <?php echo esc_attr( $instance['styling']['align'] ); ?>">
+									<?php wpinked_so_post_byline( $instance['design']['byline-below'], get_the_ID(), $instance['design']['cats'] ); ?>
 								</p>
 
 							<?php endif; ?>
@@ -139,7 +131,7 @@ if($query_result->have_posts()) : ?>
 
 								<p class="iw-so-article-excerpt <?php echo $instance['styling']['align']; ?>">
 									<?php if ( $instance['design']['e-link'] ): ?>
-										<a href="<?php the_permalink(); ?>">
+										<a href="<?php echo esc_url( get_permalink() ); ?>">
 											<?php wpinked_so_post_excerpt( $instance['design']['excerpt-length'], $instance['design']['excerpt-after'] ); ?>
 										</a>
 									<?php else: ?>
@@ -151,12 +143,8 @@ if($query_result->have_posts()) : ?>
 
 							<?php if ($instance['design']['byline-end']) : ?>
 
-								<?php $byline_end = apply_filters( 'wpinked_byline', $instance['design']['byline-end'] ); ?>
-
-								<p class="iw-so-article-byline-end <?php echo $instance['styling']['align']; ?>">
-
-									<?php echo sprintf( $byline_end, get_the_date(), get_the_category_list($instance['design']['cats']), '<a href="' . get_author_posts_url( $id ) . '">' . get_the_author() . '</a>', get_comments_number() ); ?>
-
+								<p class="iw-so-article-byline-end <?php echo esc_attr( $instance['styling']['align'] ); ?>">
+									<?php wpinked_so_post_byline( $instance['design']['byline-end'], get_the_ID(), $instance['design']['cats'] ); ?>
 								</p>
 
 							<?php endif; ?>
@@ -164,7 +152,7 @@ if($query_result->have_posts()) : ?>
 							<?php if ($instance['design']['button']) : ?>
 
 								<div class="iw-so-article-button">
-									<a class="<?php echo esc_attr(implode(' ', $btn_class)); ?>" href="<?php the_permalink(); ?>">
+									<a class="<?php echo esc_attr( implode( ' ', $btn_class) ); ?>" href="<?php esc_url( the_permalink() ); ?>">
 										<?php echo $instance['design']['btn-text']; ?>
 									</a>
 								</div>
@@ -175,42 +163,22 @@ if($query_result->have_posts()) : ?>
 
 					</div>
 
-				</div>
+					<?php $count++; ?>
 
-			<?php endwhile; wp_reset_postdata(); ?>
+				<?php endwhile; wp_reset_postdata(); ?>
+
+			</div>
+
+			<?php if ( $instance['pagination']['activate'] ): ?>
+
+				<?php wpinked_so_blog_navigation( $query_result, $instance['pagination']['activate'], $instance['pagination']['links'], $navi_attributes, $navi_previous, $navi_next ); // Blog navigation ?>
+
+			<?php endif; ?>
 
 		</div>
-
-		<?php if ( $instance['pagination']['activate'] ): ?>
-
-			<ul id='iw-so-blog-pagination' class="iw-so-blog-pagination">
-				<li class="iw-so-blog-previous"><?php echo str_replace ( '<a', '<a class="' . $navi_attributes . '"', get_previous_posts_link( $navi_previous, $query_result->max_num_pages) ) ?></li>
-				<li class="iw-so-blog-next"><?php echo str_replace ( '<a', '<a class="' . $navi_attributes . '"', get_next_posts_link( $navi_next, $query_result->max_num_pages) ) ?></li>
-			</ul>
-
-		<?php endif; ?>
 
 	</div>
 
 <?php endif; ?>
 
-<?php if ( $instance['pagination']['activate'] && $instance['pagination']['type'] == 'ajax' ): ?>
-
-	<script>
-	jQuery(document).ready(function(){
-		// AJAX pagination
-		jQuery(function(jQuery) {
-			jQuery('#<?php echo $unique; ?>').on('click', '#iw-so-blog-pagination a', function(e){
-				e.preventDefault();
-				var link = jQuery(this).attr('href');
-				jQuery('#<?php echo $unique; ?>').fadeOut(500, function(){
-					jQuery(this).load(link + ' #<?php echo $unique; ?>', function() {
-						jQuery(this).fadeIn(500);
-					});
-				});
-			});
-		});
-	});
-	</script>
-
-<?php endif; ?>
+<?php wpinked_so_blog_navigation_ajax( $instance['pagination']['activate'], $instance['pagination']['type'], $unique ); // Blog ajax navigation ?>

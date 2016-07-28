@@ -12,7 +12,7 @@
  * Description: <a href="http://www.adminer.org/en/">Adminer</a> (formerly phpMinAdmin) is a full-featured MySQL management tool written in PHP. This plugin include this tool in WordPress for a fast management of your database.
  * Author:      Frank Bültge
  * Author URI:  http://bueltge.de/
- * Version:     1.4.4
+ * Version:     1.4.5
  * License:     GPLv3+
  */
 

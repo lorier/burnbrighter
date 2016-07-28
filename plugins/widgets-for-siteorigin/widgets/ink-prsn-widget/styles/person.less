@@ -1,4 +1,4 @@
-@import "../../../../so-widgets-bundle/base/less/mixins";
+@import "../../mixins/less/mixins";
 
 @img-r: 0;
 @img-h: #fff;
@@ -10,43 +10,50 @@
 @designation: #aaa;
 @about: #333;
 
-.iw-so-person-img img {
-	border-radius: @img-r;
-}
+.iw-so-person {
 
-.iw-so-person-ol {
-	background: fade(@img-h, @img-h-o);
-	border-radius: @img-r;
-	.transition(opacity, .3s, linear);
-	p {
-		.transition(opacity, .3s, linear);
-	}
-}
+	.iw-so-person-img{
 
-.iw-so-person-profiles{
-	[class^="sow-icon-"] {
-		color: @icon;
-		&:hover,
-		&:focus {
-			color: @icon-h;
+		img {
+			border-radius: @img-r;
+		}
+
+		.iw-so-person-ol {
+			background: fade(@img-h, @img-h-o);
+			border-radius: @img-r;
+			.transition(opacity, .3s, linear);
+
+			p {
+				.transition(opacity, .3s, linear);
+			}
 		}
 	}
-}
 
-.iw-so-person-content {
-	background: @content;
-}
+	.iw-so-person-content {
+		background: @content;
 
-.iw-so-person-name {
-	font-size: 1.25em;
-	font-weight: bold;
-	margin-bottom: 0;
-}
+		.iw-so-person-name {
+			font-size: 1.25em;
+			font-weight: bold;
+		}
 
-.iw-so-person-desig {
-	font-size: 1.1em;
-	font-weight: lighter;
-	font-style: italic;
-	margin-top: 0.3em;
-	letter-spacing: 2px;
+		.iw-so-person-desig {
+			font-size: 0.9em;
+			font-weight: lighter;
+			font-style: italic;
+			letter-spacing: 2px;
+		}
+
+	}
+
+	.iw-so-person-profiles{
+		[class^="sow-icon-"] {
+			color: @icon;
+			&:hover,
+			&:focus {
+				color: @icon-h;
+			}
+		}
+	}
+
 }

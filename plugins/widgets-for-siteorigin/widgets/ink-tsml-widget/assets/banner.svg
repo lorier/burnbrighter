@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="240px" height="240px" viewBox="0 0 240 240" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-    <!-- Generator: Sketch 3.3.2 (12043) - http://www.bohemiancoding.com/sketch -->
-    <title>so-banners</title>
+<svg width="300px" height="300px" viewBox="0 0 300 300" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.6 (26304) - http://www.bohemiancoding.com/sketch -->
+    <title>Testimonial</title>
     <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <g id="Testimonial" sketch:type="MSLayerGroup">
-            <rect id="BG" fill="#E74C3C" sketch:type="MSShapeGroup" x="0" y="0" width="240" height="240"></rect>
-            <g id="Group" transform="translate(29.666667, 21.000000)" stroke="#F7EBE8" stroke-width="4" sketch:type="MSShapeGroup">
+    <defs>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-1">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic" result="blur"></feGaussianBlur>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Testimonial" transform="translate(30.000000, 30.000000)">
+            <rect id="BG" stroke="#C0392B" stroke-width="30" fill="#E74C3C" filter="url(#filter-1)" x="0" y="0" width="240" height="240"></rect>
+            <g id="Group" transform="translate(29.666667, 21.000000)" stroke="#F7EBE8" stroke-width="4">
                 <path d="M90.3333333,156.632328 C100.079535,156.632328 107.980392,139.45619 107.980392,123.886787 C107.980392,108.317384 100.079535,106 90.3333333,106 C80.5871319,106 72.6862745,108.317384 72.6862745,123.886787 C72.6862745,139.45619 80.5871319,156.632328 90.3333333,156.632328 Z" id="Oval-6"></path>
                 <path d="M78.8137255,148.401961 C78.8137255,148.401961 63.837824,155.35082 60.0307515,160.88838 C56.6482815,165.808337 57.245098,179.77451 57.245098,179.77451" id="Line" stroke-linecap="square"></path>
                 <path d="M123.421569,148.401961 C123.421569,148.401961 108.445667,155.35082 104.638595,160.88838 C101.256125,165.808337 101.852941,179.77451 101.852941,179.77451" id="Line-Copy-3" stroke-linecap="square" transform="translate(112.616952, 164.088235) scale(-1, 1) translate(-112.616952, -164.088235) "></path>

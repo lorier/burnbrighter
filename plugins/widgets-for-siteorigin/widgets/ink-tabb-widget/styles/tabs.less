@@ -1,4 +1,4 @@
-@import "../../../../so-widgets-bundle/base/less/mixins";
+@import "../mixins/less/mixins";
 
 @theme: classic;
 @bg: #fff;
@@ -7,11 +7,11 @@
 @highlight: #666;
 @icon: left;
 
-.tabs-content {
+.iw-so-tabs .iw-so-tabs-content {
 	background: @bg-c;
 }
 
-.tabs .tab-title {
+.iw-so-tabs .iw-so-tab-title {
 
 	margin-right: 3px;
 
@@ -22,29 +22,29 @@
 			background: @bg;
 			border: 2px solid @bg;
 		}
-		.tab-theme() when (@theme = flat) { 
-			background: @bg; 
-		}
-		.tab-theme() when (@theme = underline) { 
+		.tab-theme() when (@theme = flat) {
 			background: @bg;
 		}
-		.tab-theme() when (@theme = overline) { 
+		.tab-theme() when (@theme = underline) {
 			background: @bg;
 		}
-		.tab-theme() when (@theme = minimal) { 
+		.tab-theme() when (@theme = overline) {
+			background: @bg;
+		}
+		.tab-theme() when (@theme = minimal) {
 			background: transparent;
 			padding-left: 2px;
 		}
-		.tab-theme();		
+		.tab-theme();
 
 		[class^="sow-icon-"] {
 			font-size: 1.5em;
 			height: 1em;
 			width: 1em;
-			.icon-loc() when (@icon = left) { float: left; margin: -0.1em 0.75em -0.2em 0em; }
-			.icon-loc() when (@icon = right) { float: right; margin: -0.1em 0em -0.2em 0.75em; }
+			.icon-loc() when (@icon = left) { float: left; margin: 0.1em 0.75em -0.2em 0em; }
+			.icon-loc() when (@icon = right) { float: right; margin: 0.1em 0em -0.2em 0.75em; }
 			.icon-loc() when (@icon = above) { margin: -0.1em auto 0.5em auto; }
-			.icon-loc();		
+			.icon-loc();
 			display: block;
 			color: inherit;
 		}
@@ -56,17 +56,17 @@
 
 	}
 
-	&.active a {
+	&.iw-so-tab-active a {
 		.tab-active() when (@theme = boxed) {
-			background: @bg; 
+			background: @bg;
 			border-color: @highlight;
 			color: @highlight;
 		}
-		.tab-active() when (@theme = flat) { 
+		.tab-active() when (@theme = flat) {
 			background: @highlight;
 			color: @bg;
 		}
-		.tab-active() when (@theme = underline) { 
+		.tab-active() when (@theme = underline) {
 			color: @highlight;
 			.box-shadow( inset 0 -3px 0 @highlight);
 		}
@@ -74,10 +74,9 @@
 			color: @highlight;
 			.box-shadow( inset 0 3px 0 @highlight);
 		}
-		.tab-active() when (@theme = minimal) { 
+		.tab-active() when (@theme = minimal) {
 			color: @highlight;
 		}
 		.tab-active();
 	}
 }
-

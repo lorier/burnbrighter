@@ -1,22 +1,27 @@
 <?php
 
-// Enqueueing Backend CSS File
+if ( ! function_exists ( 'wpinked_so_admin_style' ) ) :
+// Enqueueing Backend style sheet.
 function wpinked_so_admin_style() {
-	wp_enqueue_style( 'iw-admin-style', plugin_dir_url( __FILE__ ) . '../statics/admin.css', array(), INKED_SO_WIDGETS );
-}
-add_action('admin_enqueue_scripts', 'wpinked_so_admin_style' );
 
-// Register style sheet.
-function wpinked_so_register_styles() {
-	// Registering Javascript Files
-	wp_register_script( 'iw-mixitup-js', plugin_dir_url(__FILE__) . '../statics/mixitup.min.js', array( 'jquery' ), INKED_SO_WIDGETS, true );
-	wp_register_script( 'iw-modernizr-js', plugin_dir_url(__FILE__) . '../statics/modernizr.js', array( ), INKED_SO_WIDGETS, false );
-	wp_register_script( 'iw-foundation-js', plugin_dir_url(__FILE__) . '../statics/foundation.js', array( 'jquery', 'iw-modernizr-js' ), INKED_SO_WIDGETS, true );
-	wp_register_script( 'iw-equalizer-js', plugin_dir_url(__FILE__) . '../statics/equalizer.js', array( 'iw-foundation-js' ), INKED_SO_WIDGETS, true );
-	wp_register_script( 'iw-waypoint-js', plugin_dir_url(__FILE__) . '../statics/waypoints.js', array( 'jquery' ), INKED_SO_WIDGETS, true );
-	wp_register_script( 'iw-countto-js', plugin_dir_url(__FILE__) . '../statics/countto.js', array( 'jquery' ), INKED_SO_WIDGETS, true );
+	wp_enqueue_style( 'iw-admin-style', plugin_dir_url( __FILE__ ) . '../css/admin.css', array(), INKED_SO_VER );
 
-	// Enqueueing CSS Files
-	wp_enqueue_style( 'iw-defaults', plugin_dir_url(__FILE__) . '../statics/defaults.css', array(), INKED_SO_WIDGETS );
 }
-add_action( 'wp_enqueue_scripts', 'wpinked_so_register_styles' );
+endif;
+add_action( 'admin_enqueue_scripts', 'wpinked_so_admin_style' );
+
+if ( ! function_exists ( 'wpinked_so_styles' ) ) :
+// Enqueueing Frontend style sheet.
+function wpinked_so_styles() {
+
+	wp_enqueue_style( 'iw-defaults', plugin_dir_url(__FILE__) . '../css/defaults.css', array(), INKED_SO_VER );
+
+	wp_register_script( 'iw-waypoints-js', plugin_dir_url(__FILE__) . '../js/waypoints' . INKED_JS_SUFFIX . '.js', array( 'jquery' ), INKED_SO_VER, true );
+	wp_register_script( 'iw-countto-js', plugin_dir_url(__FILE__) . '../js/countto' . INKED_JS_SUFFIX . '.js', array( 'jquery' ), INKED_SO_VER, true );
+	wp_register_script( 'iw-easypie-js', plugin_dir_url(__FILE__) . '../js/easypie' . INKED_JS_SUFFIX . '.js', array( 'jquery' ), INKED_SO_VER, true );
+	wp_register_script( 'iw-mixitup-js', plugin_dir_url(__FILE__) . '../js/mixitup' . INKED_JS_SUFFIX . '.js', array( 'jquery' ), INKED_SO_VER, true );
+	wp_register_script( 'iw-match-height-js', plugin_dir_url(__FILE__) . '../js/match-height' . INKED_JS_SUFFIX . '.js', array( 'jquery' ), INKED_SO_VER, true );
+
+}
+endif;
+add_action( 'wp_enqueue_scripts', 'wpinked_so_styles' );

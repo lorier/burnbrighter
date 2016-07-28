@@ -1,5 +1,3 @@
-@import "../../../../so-widgets-bundle/base/less/mixins";
-
 @btn-theme: flat;
 @btn-align: left;
 @btn-size: standard;
@@ -8,8 +6,6 @@
 @btn-crnr: 0em;
 
 .iw-so-article-button {
-	.clearfix();
-
 	.btn-align() when (@btn-align = left) { text-align: left }
 	.btn-align() when (@btn-align = right) { text-align: right }
 	.btn-align() when (@btn-align = center) { text-align: center }
@@ -69,8 +65,7 @@
 	}
 	.btn-theme();
 
-	&:hover,
-	&:focus {
+	&:hover {
 		.dft-theme() when (@btn-theme = classic) {
 			color: @btn-base;
 		}
@@ -93,8 +88,7 @@
 	}
 }
 .iw-so-article-btn-hover {
-	&:hover,
-	&:focus {
+	&:hover {
 		color: @btn-base;
 		.btn-hover() when (@btn-theme = classic) {
 			.gradient(lighten(@btn-clr, 2%), darken(@btn-clr, 20%), lighten(@btn-clr, 2%));

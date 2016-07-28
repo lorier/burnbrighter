@@ -1,48 +1,40 @@
 <?php
-
 $icon_styles = array();
 $icon_styles[] = 'font-size: 2em';
 if(!empty($instance['styling']['icon'])) $icon_styles[] = 'color: '.$instance['styling']['icon'];
 
-if($instance['settings']['expand']):
-	$expand = ' multi_expand: true;';
-endif;
-
-if($instance['settings']['toggleable']):
-	$toggleable = ' toggleable: false;';
-endif;
+$expand = ( $instance['settings']['expand'] ) ? '' : ' iw-so-acc-singleExpand';
+$toggle = ( $instance['settings']['toggleable'] ) ? ' iw-so-acc-toggle' : '';
 
 $acc_no = 1;
 
 if( $instance['settings']['id'] ):
 	$unique = $instance['settings']['id'];
 else :
-	$unique = 'ardn-' . $instance['_sow_form_id'];
+	$unique = 'toggle-' . wpinked_so_unique_id();
 endif;
 ?>
 
-<ul class="accordion" data-accordion data-options="<?php echo $expand . $toggleable; ?>">
+<div class="iw-so-accordion<?php echo $expand . $toggle; ?>">
 
 	<?php foreach( $instance['toggles'] as $i => $toggle ) { ?>
 
-		<li class="accordion-navigation">
+		<div class="iw-so-acc-item<?php echo ( $toggle['active'] == 1 ? ' iw-so-acc-item-active' : '' ); ?>">
 
-			<a href="#<?php echo $unique . '-' . $acc_no; ?>" class="<?php echo $instance['styling']['text']; ?>">
-				<?php echo $toggle['title']; ?>
+			<a href="#" class="iw-so-acc-title <?php echo $instance['styling']['text']; ?>" id="<?php echo $unique . '-' . $acc_no; ?>">
+				<?php echo esc_html( $toggle['title'] ); ?>
 				<span class="iw-so-tgl-open"><?php echo siteorigin_widget_get_icon( $instance['settings']['icon-open'], $icon_styles ); ?></span>
 				<span class="iw-so-tgl-close"><?php echo siteorigin_widget_get_icon( $instance['settings']['icon-close'], $icon_styles ); ?></span>
 			</a>
 
-			<div id="<?php echo $unique . '-' . $acc_no; ?>" class="content<?php echo ($toggle['active'] == 1 ? ' active' : '' ); ?>">
-
-				<?php echo $toggle['content']; ?>
-
+			<div class="iw-so-acc-content">
+				<?php echo wp_kses_post( $toggle['content'] ); ?>
 			</div>
 
-		</li>
+		</div>
 
 		<?php $acc_no++; ?>
 
 	<?php } ?>
 
-</ul>
+</div>

@@ -15,11 +15,11 @@ class Inked_Bar_Counter_SO_Widget extends SiteOrigin_Widget {
 
 			'ink-bar-count',
 
-			__('Inked Bar Counter', 'wpinked-widgets'),
+			__( 'Inked Bar Counter', 'wpinked-widgets' ),
 
 			array(
-				'description' => __('Animated bars to display your stats.', 'wpinked-widgets'),
-				'help' => 'http://docs.wpinked.com/widgets-for-siteorigin/bar-counter-widget'
+				'description' => __( 'Animated bars to display your stats.', 'wpinked-widgets' ),
+				'help'        => 'http://docs.wpinked.com/widgets-for-siteorigin/bar-counter-widget'
 			),
 
 			array(
@@ -27,105 +27,110 @@ class Inked_Bar_Counter_SO_Widget extends SiteOrigin_Widget {
 
 			array(
 
-				'admin' => array(
-					'type' => 'text',
-					'label' => __('Admin Label', 'wpinked-widgets'),
-					'default' => ''
+				'admin'          => array(
+					'type'          => 'text',
+					'label'         => __( 'Admin Label', 'wpinked-widgets' ),
+					'default'       => ''
 				),
 
-				'bars' => array(
-					'type' => 'repeater',
-					'label' => __( 'Bars' , 'wpinked-widgets' ),
-					'item_name'  => __( 'Bar', 'wpinked-widgets' ),
-					'item_label' => array(
+				'bars'           => array(
+					'type'          => 'repeater',
+					'label'         => __( 'Bars' , 'wpinked-widgets' ),
+					'item_name'     => __( 'Bar', 'wpinked-widgets' ),
+					'item_label'    => array(
 						'selector'     => "[id*='title']",
 						'update_event' => 'change',
 						'value_method' => 'val'
 					),
-					'fields' => array(
+					'fields'        => array(
 
-						'title' => array(
-							'type' => 'text',
-							'label' => __('Title', 'wpinked-widgets'),
-							'default' => ''
+						'title'        => array(
+							'type'        => 'text',
+							'label'       => __( 'Title', 'wpinked-widgets' ),
+							'default'     => ''
 						),
 
-						'percent' => array(
-							'type' => 'slider',
-							'label' => __( 'Percentage', 'wpinked-widgets' ),
-							'default' => 50,
-							'min' => 0,
-							'max' => 100,
-							'integer' => true
+						'percent'      => array(
+							'type'        => 'slider',
+							'label'       => __( 'Percentage', 'wpinked-widgets' ),
+							'default'     => 50,
+							'min'         => 0,
+							'max'         => 100,
+							'integer'     => true
 						),
 
 					)
-
 				),
 
-				'styling' => array(
-					'type' => 'section',
-					'label' => __( 'Styling' , 'wpinked-widgets' ),
-					'hide' => true,
-					'fields' => array(
+				'styling'        => array(
+					'type'          => 'section',
+					'label'         => __( 'Styling' , 'wpinked-widgets' ),
+					'hide'          => true,
+					'fields'        => array(
 
-						'height' => array(
-							'type' => 'text',
-							'label' => __( 'Height', 'wpinked-widgets' ),
-							'default' => '25px',
-							'description' => __( 'Enter the units, eg: px, em, rem, ...', 'wpinked-widgets' ),
+						'animation'    => array(
+							'type'        => 'checkbox',
+							'label'       => __( 'Use animations?', 'wpinked-widgets' ),
+							'default'     => true
+						),
+
+						'height'       => array(
+							'type'        => 'text',
+							'label'       => __( 'Height', 'wpinked-widgets' ),
+							'default'     => '15px',
+							'description' => __( 'Please specify units, eg: px, em, rem, ...', 'wpinked-widgets' ),
 						),
 
 						'percent-show' => array(
-							'type' => 'checkbox',
-							'label' => __( 'Show Percentage ?', 'wpinked-widgets' ),
-							'default' => true
+							'type'        => 'checkbox',
+							'label'       => __( 'Show Percentage?', 'wpinked-widgets' ),
+							'default'     => true
 						),
 
-						'title' => array(
-							'type' => 'color',
-							'label' => __( 'Title Color', 'wpinked-widgets' ),
-							'default' => ''
+						'title'        => array(
+							'type'        => 'color',
+							'label'       => __( 'Title Color', 'wpinked-widgets' ),
+							'default'     => ''
 						),
 
-						'percent' => array(
-							'type' => 'color',
-							'label' => __( 'Percentage Color', 'wpinked-widgets' ),
-							'default' => ''
+						'percent'      => array(
+							'type'        => 'color',
+							'label'       => __( 'Percentage Color', 'wpinked-widgets' ),
+							'default'     => ''
 						),
 
-						'bar-bg' => array(
-							'type' => 'color',
-							'label' => __( 'Bar Background Color', 'wpinked-widgets' ),
-							'default' => ''
+						'bar-bg'       => array(
+							'type'        => 'color',
+							'label'       => __( 'Bar Background Color', 'wpinked-widgets' ),
+							'default'     => '#eee'
 						),
 
-						'bar' => array(
-							'type' => 'color',
-							'label' => __( 'Bar Color', 'wpinked-widgets' ),
-							'default' => ''
+						'bar'          => array(
+							'type'        => 'color',
+							'label'       => __( 'Bar Color', 'wpinked-widgets' ),
+							'default'     => '#e74c3c'
 						),
 
-						'border' => array(
-							'type' => 'checkbox',
-							'label' => __( 'Show Border ?', 'wpinked-widgets' ),
-							'default' => true
+						'border'       => array(
+							'type'        => 'checkbox',
+							'label'       => __( 'Show Border?', 'wpinked-widgets' ),
+							'default'     => true
 						),
 
-						'border-clr' => array(
-							'type' => 'color',
-							'label' => __( 'Border Color', 'wpinked-widgets' ),
-							'default' => ''
+						'border-clr'   => array(
+							'type'        => 'color',
+							'label'       => __( 'Border Color', 'wpinked-widgets' ),
+							'default'     => ''
 						),
 
-						'corners' => array(
-							'type' => 'select',
-							'label' => __('Corners', 'wpinked-widgets'),
-							'default' => '0.25em',
-							'options' => array(
-								'0em' => __('Sharp', 'wpinked-widgets'),
-								'0.25em' => __('Curved', 'wpinked-widgets'),
-								'0.75em' => __('Round', 'wpinked-widgets'),
+						'corners'      => array(
+							'type'        => 'select',
+							'label'       => __( 'Corners', 'wpinked-widgets' ),
+							'default'     => '0.25em',
+							'options'     => array(
+								'0em'        => __( 'Sharp', 'wpinked-widgets' ),
+								'0.25em'     => __( 'Curved', 'wpinked-widgets' ),
+								'0.75em'     => __( 'Round', 'wpinked-widgets' ),
 							),
 						),
 
@@ -138,36 +143,41 @@ class Inked_Bar_Counter_SO_Widget extends SiteOrigin_Widget {
 		);
 	}
 
-	function get_template_name($instance) {
+	function get_template_name( $instance ) {
 		return 'bar';
 	}
 
-	function get_style_name($instance) {
+	function get_style_name( $instance ) {
 		return 'bar';
 	}
 
-	function enqueue_frontend_scripts( $instance ) {
+	function initialize() {
 
-		wp_enqueue_script( 'iw-bar-js', siteorigin_widget_get_plugin_dir_url('ink-bar-count') . 'scripts/bar.js', array( 'iw-waypoint-js' ), INKED_SO_WIDGETS, true );
+		$this->register_frontend_scripts(
+			array(
+				array( 'iw-bar-counter-js', plugin_dir_url(__FILE__) . 'js/bar-counter' . INKED_JS_SUFFIX . '.js', array( 'iw-waypoints-js' ), INKED_SO_VER, true )
+			)
+		);
 
-		parent::enqueue_frontend_scripts( $instance );
 	}
 
 	function get_less_variables($instance) {
+
 		if( empty( $instance ) ) return array();
 
 		return array(
-			'radius' => $instance['styling']['corners'],
-			'height' => $instance['styling']['height'],
-			'title' => $instance['styling']['title'],
+			'radius'  => $instance['styling']['corners'],
+			'height'  => $instance['styling']['height'],
+			'title'   => $instance['styling']['title'],
 			'percent' => $instance['styling']['percent'],
-			'bar-bg' => $instance['styling']['bar-bg'],
-			'bar' => $instance['styling']['bar'],
-			'border' => $instance['styling']['border'],
+			'bar-bg'  => $instance['styling']['bar-bg'],
+			'bar'     => $instance['styling']['bar'],
+			'border'  => $instance['styling']['border'],
 			'bor-clr' => $instance['styling']['border-clr'],
 		);
+
 	}
 
 }
 
-siteorigin_widget_register('ink-bar-count', __FILE__, 'Inked_Bar_Counter_SO_Widget');
+siteorigin_widget_register( 'ink-bar-count', __FILE__, 'Inked_Bar_Counter_SO_Widget' );

@@ -1,4 +1,4 @@
-@import "../../../../so-widgets-bundle/base/less/mixins";
+@import "../../mixins/less/mixins";
 @import "button";
 @import "navigation";
 
@@ -21,12 +21,14 @@
 
 .iw-so-article {
 	margin-bottom: @gap;
+	background: @cnt-bg;
 }
 
 .iw-so-article-thumb {
 	overflow: hidden;
 	position: relative;
 	background: @img-ol;
+
 	img {
 		vertical-align: top;
 		width: 100%;
@@ -41,7 +43,7 @@
 			-moz-transform: translateZ(0);
 			-ms-transform: translateZ(0);
 			-o-transform: translateZ(0);
-    		transform: translateZ(0);
+			transform: translateZ(0);
 			}
 		.img-expand-def();
 	}
@@ -84,7 +86,6 @@
 
 .iw-so-article-content {
 	padding: 10px;
-	background: @cnt-bg;
 }
 
 .iw-so-article-title {
@@ -123,6 +124,11 @@
 }
 
 .iw-so-article-byline-below {
+	margin-top: 0.7em;
+	margin-bottom: 0;
+}
+
+.iw-so-article-byline-end {
 	margin-top: 0.7em;
 	margin-bottom: 0;
 }

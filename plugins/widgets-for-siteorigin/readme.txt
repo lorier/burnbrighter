@@ -2,17 +2,17 @@
 Contributors: iamadi
 Tags: bundle, widget, button, alert, accordion, audio, video, blog, divider, person, portfolio, tabs, testimonial, siteorigin
 Requires at least: 3.9
-Tested up to: 4.4
-Stable tag: 1.2.2
+Tested up to: 4.5.3
+Stable tag: 1.2.3
 License: GPLv3 or later
 
-A few more widgets to play around with. Built on top of the SiteOrigin Widgets Bundle.
+A collection of highly customizable and thoughtfully crafted widgets. Built on top of the SiteOrigin Widgets Bundle.
 
 == Description ==
 
-A small collection of lightweight and responsive widgets that will enhance your [SiteOrigin](https://wordpress.org/plugins/siteorigin-panels/) powered Wordpress Sites.
+Widgets for SiteOrigin is a bundle of customizable, lightweight and responsive building blocks that can be used either with [SiteOrigin Page Builder](https://wordpress.org/plugins/siteorigin-panels/) or any other widgetized area.
 
-The Widgets that are included:
+Included widgets
 
 * Blog Widget to display blog posts.
 * Portfolio Widget to show off your work.
@@ -24,6 +24,7 @@ The Widgets that are included:
 * Media Box to highlight important bits of info.
 * Testimonial Widget to highlight what your customers think of you.
 * Person Widget to get to know you better.
+* Pricing table to add eye catching pricing lists.
 * Alert Widget to communicate success, warnings, failure or just information.
 * Number Counter Widget to display your stats.
 * Circle Counter Widget to display your stats with animated circles.
@@ -35,13 +36,7 @@ Additional Feature:
 
 * Visibility to show/hide widgets and rows based on screen width and orientation.
 
-This is all we have at the moment and hope to have much more in days to come.
-
-Check out the <a target="_blank" href="http://demo.wpinked.com/">demos</a>.
-
-Have a look at the <a target="_blank" href="http://docs.wpinked.com/">documentation</a>.
-
-You can follow the progress of the project on <a target="_blank" href="https://github.com/wpinked/widgets-for-siteorigin">Github</a>.
+Check out <a target="_blank" href="http://widgets.wpinked.com/">demos and docs</a>.
 
 == Installation ==
 
@@ -57,6 +52,23 @@ Upload and install these plugins.
 2. Control the visibility of your widgets and rows.
 
 == Changelog ==
+
+= 1.2.3 - July 26 2016  =
+* Recoded most widgets making them light weight and quicker.
+* Major work on CSS and JS files. Sizes significantly lowered.
+* Updated Alert widget.
+* Added deep-linking to Tabs, Accordion and Filter Accordion widgets.
+* Added option to disable animation in Bar and Circle counter widgets.
+* Improved navigation, added pagination and added option to make all posts equal height.
+* Added option to remove All link in Portfolio and Filter Accordion widgets.
+* Added option to use oEmbed in Media Box Widget.
+* Added gallery layout to Portfolio widget.
+* Fixed issue with using multiple Portfolio widgets on the same page.
+* Added Pricing Table Widget.
+* A number of other fixes.
+
+= 1.2.2 - February 5 2016  =
+* Minor bug fixes to the blog widget
 
 = 1.2.1 - February 3 2016  =
 * Minor bug fixes to the blog widget
