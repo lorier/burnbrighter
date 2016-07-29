@@ -4,24 +4,30 @@
 }
 .tw-carousel-thumbnail {
   float: left;
-  width: 49.9998%;
+  margin-right: 20px;
 }
-.tw-client-info {
-  float: left;
-  margin-left: 15px;
-}
+
 .tw-carousel-thumbnail .headshot {
   width: 130px;
   height: 130px;
   border-radius: 100%;
   -moz-border-radius:100%;
   -webkit-border-radius:100%;
+  margin-right: 15px;
 }
 .tw-carousel-container {
-  max-width: 830px;
+  max-width: 750px;
   margin: 0 auto;
 }
-a.tw-carousel-nav {
+@media screen and (max-width: 900px){
+  .tw-carousel-container {
+    max-width: 350px;
+  }
+}
+a.tw-carousel-nav.left,
+a.tw-carousel-nav.right,
+ {
+    display: block;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -30,15 +36,24 @@ a.tw-carousel-nav {
     text-align: center;
     text-shadow: 0 1px 2px rgba(0,0,0,.6);
 }
+/*@media screen and (max-width: 600px){
+    a.tw-carousel-nav.left,
+    a.tw-carousel-nav.right, {
+      visibility: hidden;
+      display: none;
+    }
+}*/
 a.tw-carousel-nav:hover,
 a.tw-carousel-nav:focus {
   outline: none;
 }
 .tw-carousel-nav.left {
     left: 0;
+    display: block;
 }
 .tw-carousel-nav.right {
     right: 0;
+    display: block;
 }
 .tw-carousel-previous,
 .tw-carousel-next {
@@ -47,62 +62,69 @@ a.tw-carousel-nav:focus {
     margin-top: -10px;
     font-size: 30px;
     position: absolute;
-    top: 50%;
+    top: 40%;
     z-index: 5;
     display: inline-block;
 }
+.tw-carousel-next {
+  right: 0;
+}
+div.tw-content {
+  min-height: 300px;
+}
+.tw-client-info h3 {
+    font-size: 18px;
+    margin-bottom: 2px;
+  }
+.tw-client-info p {
+    font-size: 15px;
+    font-style: italic;
+  }
 
 
 
 
 
 
-@font-face {
+
+/*@font-face {
   font-family: 'carousel-arrows';
   src: url('fonts/carousel-arrows.eot?-95vnmw');
   src: url('fonts/carousel-arrows.eot?#iefix-95vnmw') format('embedded-opentype'), url('fonts/carousel-arrows.woff?-95vnmw') format('woff'), url('fonts/carousel-arrows.ttf?-95vnmw') format('truetype'), url('fonts/carousel-arrows.svg?-95vnmw#carousel-arrows') format('svg');
   font-weight: normal;
   font-style: normal;
-}
+}*/
 .tw-carousel-nav .widget-title {
   display: inline-block;
   padding-right: 15px;
 }
 .tw-carousel-nav span.tw-carousel-next,
 .tw-carousel-nav span.tw-carousel-previous {
-  font-family: 'carousel-arrows';
-  speak: none;
+  background:  url('images/arrow-next.png') center center no-repeat;
+  background-size: contain;
+  display: block;
 
   margin-top: 3px;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  font-size: 8px;
   line-height: 18px;
-  width: 18px;
+  width:36px;
+  height: 60px;
   text-align: center;
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-decoration: none;
-  color: #FFFFFF;
-  background: #333333;
-  border-radius: 2px;
 }
 .tw-carousel-nav span.tw-carousel-previous {
   float: left;
+  background:  url('images/arrow-prev.png') no-repeat center center;
+  background-size: contain;
 }
+
 .tw-carousel-nav span.tw-carousel-next:hover,
 .tw-carousel-nav span.tw-carousel-previous:hover {
-  background: #444444;
+  background-position: left center;
+  transition: all .1s ease-in-out;
 }
-.tw-carousel-nav span.tw-carousel-next:before {
-  content: "\e601";
+.tw-carousel-nav span.tw-carousel-next:hover{
+  background-position: right center;
 }
-.tw-carousel-nav span.tw-carousel-previous:before {
-  content: "\e600";
-}
+
 @media screen and (max-width: 600px) {
   .tw-carousel-nav span.tw-carousel-previous {
     display: none;
@@ -127,7 +149,7 @@ a.tw-carousel-nav:focus {
   -moz-transition: all 0.45s ease;
   -o-transition: all 0.45s ease;
   transition: all 0.45s ease;
-  height: 200px;
+  /*height: 200px;*/
   margin: 0;
   padding: 0;
   zoom: 1;
@@ -148,8 +170,8 @@ a.tw-carousel-nav:focus {
   padding: 0;
   display: block;
   float: left;
-  margin-right: 15px;
-  width: 400px;
+  margin-right: 40px;
+  width: 350px;
   overflow-x: hidden;
   overflow-y: hidden;
 }
@@ -215,10 +237,10 @@ a.tw-carousel-nav:focus {
 }
 .tw-carousel-wrapper ul.tw-carousel-items li.tw-carousel-loading {
   display: block;
-  width: 242px;
+  width: 100%;
   height: 162px;
   float: left;
-  background: url(images/carousel-loader.gif) #F6F6F6 center center no-repeat;
+  background: url(images/carousel-loader.gif)center center no-repeat;
   margin: 0;
 }
 a.tw-carousel-previous {

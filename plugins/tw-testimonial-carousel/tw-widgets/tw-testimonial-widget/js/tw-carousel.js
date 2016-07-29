@@ -19,44 +19,70 @@ jQuery( function($){
             isRTL = $postsContainer.hasClass('js-rtl'),
             updateProp = isRTL ? 'margin-right' : 'margin-left';
 
-            console.log(totalPosts);
+        $('.tw-carousel-nav.left').hide();
 
-        var updatePosition = function() {
+                console.log( 'totalPosts at beginning: ' + totalPosts);
+
+        var updatePosition = function(){
+            //don't go back before the beginning
             if ( position < 0  ) position = 0;
-            if ( position >= totalPosts - 1) position = (totalPosts - 2 );
 
-            if ( position >= $$.find('.tw-carousel-item').length - 1 ) {
-                position = $$.find('.tw-carousel-item').length - 1;
-
-
-                // Fetch the next batch
-                if( !fetching &&  !complete ) {
-                    fetching = true;
-                    page++;
-                    $itemsContainer.append('<li class="tw-carousel-item tw-carousel-loading"></li>');
-
-                    $.get(
-                        $$.data('ajax-url'),
-                        {
-                            query : $$.data('query'),
-                            action : 'tw_carousel_load',
-                            paged : page
-                        },
-                        function (data, status){
-                            var $items = $(data.html);
-                            console.log("items: " + JSON.stringify($items));
-                            $items.appendTo( $itemsContainer ).hide().fadeIn();
-                            $$.find('.tw-carousel-loading').remove();
-                            numItems = $$.find('.tw-carousel-item').length;
-                            complete = numItems == totalPosts;
-                            fetching = false;
-                        }
-                    )
-                }
+            //don't go past the end
+            if ( position >= (totalPosts - 1) ){
+                position = ( totalPosts - 2 );
             }
             $itemsContainer.css('transition-duration', "0.45s");
-            //make the carousel move by 2 instead of 1
+            
             $itemsContainer.css(updateProp, -( (itemWidth) * position) + 'px' );
+
+            // if ( position >= $$.find('.tw-carousel-item').length - 1 ) {
+            //     position = $$.find('.tw-carousel-item').length - 1;
+            //     
+            updateControls(position, numItems);
+        };
+
+        // var updatePositionAjax = function() {
+
+
+        //         // Fetch the next batch
+        //         if( !fetching &&  !complete ) {
+        //             fetching = true;
+        //             page++;
+        //             $itemsContainer.append('<li class="tw-carousel-item tw-carousel-loading"></li>');
+
+        //             $.get(
+        //                 $$.data('ajax-url'),
+        //                 {
+        //                     query : $$.data('query'),
+        //                     action : 'tw_carousel_load',
+        //                     paged : page
+        //                 },
+        //                 function (data, status){
+        //                     var $items = $(data.html);
+        //                     $items.appendTo( $itemsContainer ).hide().fadeIn();
+        //                     $$.find('.tw-carousel-loading').remove();
+        //                     numItems = $$.find('.tw-carousel-item').length;
+        //                     complete = numItems == totalPosts;
+        //                     fetching = false;
+        //                 }
+        //             )
+        //         }
+        //     $itemsContainer.css('transition-duration', "0.45s");
+            
+        //     $itemsContainer.css(updateProp, -( (itemWidth) * position) + 'px' );
+        //     updateControls(position, numItems);
+            
+        // };
+        var updateControls = function(position, totalPosts){
+            console.log("totalPosts: " + totalPosts);
+            console.log("position: " + position);
+                if (position >= totalPosts-2){
+                    $('.tw-carousel-nav.right').hide();
+                }else {$('.tw-carousel-nav.right').show();}
+
+                if (position <= 0){
+                    $('.tw-carousel-nav.left').hide();
+                }else {$('.tw-carousel-nav.left').show();}
         };
 
         $container.on( 'click', 'a.tw-carousel-nav.left',
@@ -71,6 +97,7 @@ jQuery( function($){
             function(e){
                 e.preventDefault();
                 position += isRTL ? -1 : 1;
+                console.log("clickhandler: " + position);
                 updatePosition();
             }
         );

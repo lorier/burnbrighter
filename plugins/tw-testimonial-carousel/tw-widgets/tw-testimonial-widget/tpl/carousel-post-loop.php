@@ -2,7 +2,7 @@
 $posts = new WP_Query($query);
 while($posts->have_posts()) : $posts->the_post(); ?>
 	<li class="tw-carousel-item<?php if( is_rtl() ) echo ' rtl' ?>">
-		<p><?php the_content(); ?></p>
+		<div class="tw-content"><?php the_content(); ?></div>
 		<div class="tw-client-info-wrapper">
 			<div class="tw-carousel-thumbnail">
 				<?php if( has_post_thumbnail() ) : $img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'tw-carousel-default'); ?>
