@@ -22,6 +22,7 @@
 	margin: 0;
 	height: 461px;
 	padding-top: 70px;
+
 	.widget.widget_sow-image {
 	    left: 0;
 	    right: 0;
@@ -60,7 +61,7 @@
 	}
 }
 .home #top-header {
-	background: $lightest-gray url('images/home_bg.jpg') no-repeat center top;
+	background: #009ce9 url('images/home_bg.jpg') no-repeat center top;
 }
 .blog #top-header,
 .single #top-header {
@@ -72,14 +73,18 @@
 
 }
 .philosophy-page #top-header {
-	background: $lightest-gray url('images/philosophy_hero.jpg') no-repeat center center;
+	background: #0077c3 url('images/philosophy_hero.jpg') no-repeat center center;
 	height: 460px;
 	.widget.widget_sow-image {
 		max-width: 390px;	
 	}
+	@media screen and (max-width: 901px){
+		background: #2c7ac8;
+		height: 370px;
+	}
 }
 .program-page #top-header {
-	background: $lightest-gray url('images/program_hero.jpg') no-repeat center center;
+	background: #3e7c1b url('images/program_hero.jpg') no-repeat center center;
 	height: 367px;
 }
 

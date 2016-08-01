@@ -58,7 +58,7 @@
 	background-position: left top, left bottom;
 	background-repeat: repeat-x, repeat-x;
 
-	margin-top: 50px;
+	// margin-top: 50px;
 	
 	display: inline-block;
 	padding-top: 20px;
@@ -67,7 +67,9 @@
 .arrow-red {
 	background-image: url('images/red_triangles_up.png'),url('images/red_triangles.png');
 }
-
+#pl-w579c18cdc4e02 .panel-grid-cell .so-panel{
+	margin-bottom: 0px !important;
+}
 .more-time {
 	line-height: 0;
 	img {
@@ -102,6 +104,9 @@
 	letter-spacing: .06em;
 	font-weight: 700;
 	text-transform: uppercase;
+	p {
+		margin-bottom: 5px;
+	}
 }
 .bb-button {
 	font-family: $headline-font;
@@ -136,10 +141,10 @@
 	.sow-icon-fontawesome {
 
 	}
-	.accordion {
+	.iw-so-accordion {
 		background-color: white;
 	}
-	li.accordion-navigation {
+	div.iw-so-acc-item {
 		border-bottom: 1px solid $lightest-gray;
 		background-image: url(images/go.png);
 		background-position: 30px 26px;
@@ -147,40 +152,73 @@
 		background-repeat: no-repeat;
 		padding-left: 120px;
 		min-height: 133px;
+		> a:before {
+			content: 'Running Start \2014  Available immediately after you register';
+		}
 	}
-	li.accordion-navigation:nth-child(2){
+	div.iw-so-acc-item:nth-child(2){
 		background-image: url(images/zero.png);
+		> a:before {
+			content: 'Pre\2013Program Homework';
+		}
 	}
-	li.accordion-navigation:nth-child(3){
+	div.iw-so-acc-item:nth-child(3){
 			background-image: url(images/one.png);
+			> a:before {
+				content: 'Module 1 \2014   Skyrocket your Metabolism';
+			}
 		}
-	li.accordion-navigation:nth-child(4){
-			background-image: url(images/two.png);
+	div.iw-so-acc-item:nth-child(4){
+		background-image: url(images/two.png);
+		> a:before {
+			content: 'Module 2 \2014  Top Foods to Toss now';
 		}
-	li.accordion-navigation:nth-child(5){
-			background-image: url(images/three.png);
+	}
+	div.iw-so-acc-item:nth-child(5){
+		background-image: url(images/three.png);
+		> a:before {
+			content: 'Module 3 \2014  The last cleanse you’ll ever need';
 		}
-	li.accordion-navigation:nth-child(6){
-			background-image: url(images/four.png);
+	}
+	div.iw-so-acc-item:nth-child(6){
+		background-image: url(images/four.png);
+		> a:before {
+			content: 'Module 4 \2014  Carb Monster';
 		}
-	li.accordion-navigation:nth-child(7){
-			background-image: url(images/five.png);
+	}
+	div.iw-so-acc-item:nth-child(7){
+		background-image: url(images/five.png);
+		> a:before {
+			content: 'WEEK 5 \2014  Catch up, Rest Up & Be Heard!';
 		}
-	li.accordion-navigation:nth-child(8){
-			background-image: url(images/six.png);
+	}
+	div.iw-so-acc-item:nth-child(8){
+		background-image: url(images/six.png);
+			> a:before {
+			content: 'Module 6 \2014  Why Paleo Works, Pure and Simple';
 		}
-	li.accordion-navigation:nth-child(9){
-			background-image: url(images/seven.png);
+	}
+	div.iw-so-acc-item:nth-child(9){
+		background-image: url(images/seven.png);
+		> a:before {
+			content: 'Module 7 \2014  Stop Fearing Fats';
 		}
-	li.accordion-navigation:nth-child(10){
-			background-image: url(images/eight.png);
+	}
+	div.iw-so-acc-item:nth-child(10){
+		background-image: url(images/eight.png);
+		> a:before {
+			content: 'Module 8 \2014  Power up with Protein';
 		}
-	li.accordion-navigation:nth-child(11){
+	}
+	div.iw-so-acc-item:nth-child(11){
 		background-image: url(images/bonus.png);
+		> a:before {
+			content: 'BONUS SECTION!';
+		}
 	}
 
 
-	.accordion-navigation > a {
+	.iw-so-acc-item > a {
 		font-size: 24px !important;
 		line-height: 28px;
 		padding-right: 150px !important;
@@ -188,7 +226,7 @@
 			text-decoration: none;
 		}
 	}
-	.accordion-navigation > a:before {
+	.iw-so-acc-item > a:before {
 		display: block;
 		color: $red;
 		text-transform: uppercase;
@@ -196,48 +234,27 @@
 		font-size: 14px;
 
 	}
-	a[href='#ardn-578e705e67736-1']:before {
-		content: 'Running Start \2014  Available immediately after you register';
-	}
-	a[href='#ardn-578e705e67736-2']:before {
-		content: 'Pre\2013Program Homework';
-	}
-	a[href='#ardn-578e705e67736-3']:before {
-		content: 'Module 1 \2014   Skyrocket your Metabolism';
-	}
-	a[href='#ardn-578e705e67736-4']:before {
-		content: 'Module 2 \2014  Top Foods to Toss now';
-	}
-	a[href='#ardn-578e705e67736-5']:before {
-		content: 'Module 3 \2014  The last cleanse you’ll ever need';
-	}
-	a[href='#ardn-578e705e67736-6']:before {
-		content: 'Module 4 \2014  Carb Monster';
-	}
-	a[href='#ardn-578e705e67736-7']:before {
-		content: 'WEEK 5 \2014  Catch up, Rest Up & Be Heard!';
-	}
-	a[href='#ardn-578e705e67736-8']:before {
-		content: 'Module 6 \2014  Why Paleo Works, Pure and Simple';
-	}
-	a[href='#ardn-578e705e67736-9']:before {
-		content: 'Module 7 \2014  Stop Fearing Fats';
-	}
-	a[href='#ardn-578e705e67736-10']:before {
-		content: 'Module 8 \2014  Power up with Protein';
-	}
-	a[href='#ardn-578e705e67736-11']:before {
+	
+
+
+	
+
+	
+
+	
+	
+	> a:before {
 		content: 'BONUS SECTION!';
 	}
 
-	.accordion .accordion-navigation a span {
+	.iw-so-accordion .iw-so-acc-item a span {
 		top:22px;
 		right: 19px !important;
 		&:hover {
 			text-decoration: none;
 		}
 	}
-	.accordion-navigation.active .content.active li:before {
+	.iw-so-acc-item.active .content.active div:before {
 		font-family: FontAwesome;
 	    content: '\f00c';
 	    position: relative;
@@ -247,10 +264,16 @@
 	    display: inline-block;
 	    text-decoration: none;
 	}
+	@media screen and (max-width: 780px){
+		div.iw-so-acc-item {
+			background-image: none;
+			padding-left: 0;
+		}
+	}
 }
 
 // FAQ accordion
-#faq-accordion .faq .accordion-navigation > a {
+#faq-accordion .faq .iw-so-acc-item > a {
 	padding: 0;
 }
 #faq-accordion .faq .content {
@@ -260,6 +283,42 @@
 //Philosophy page
 #philosophy .widget_sow-image {
 	margin-bottom: 0 !important;
+}
+#pgc-3-philosophy-0 .about-breanne{
+	@media screen and (min-width: $desktop-nav-up){
+		max-width: 550px;
+	    float: right;
+    }
+}
+#pgc-3-philosophy-1 .about-breanne {
+	padding: 30px;
+	h2,h4 {
+		margin-bottom: 5px;
+	}
+	h4 {
+		font-weight: bold;
+	}
+}
+.why-burn #panel-3-3-0-1 {
+	margin-bottom: 0 !important;
+}
+
+#pay-it-forward img{
+	display: block;
+}
+#pay-it-forward #pgc-3-pay-it-forward-0 {
+	@media screen and (min-width: 780px){
+		max-width: 400px;
+		margin: 0 auto;
+	}
+}
+
+.pet-project {
+	@media screen and (min-width: $desktop-nav-up){
+		img {
+			margin-top: -58px;
+		}
+	}
 }
 
 
