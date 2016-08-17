@@ -147,3 +147,8 @@
 	background-color: #efefef;
 	color: #999;
 }
+@media screen and (max-width: $mobile-nav-down){
+	max-width: 400px;
+    margin: 0 auto;
+    float: none;
+}

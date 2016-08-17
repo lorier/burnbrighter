@@ -80,7 +80,14 @@ div.tw-content {
     font-size: 15px;
     font-style: italic;
   }
-
+.tw-single .tw-carousel-wrapper ul.tw-carousel-items,
+.tw-single .tw-carousel-wrapper ul.tw-carousel-items li.tw-carousel-item {
+  width: 100%;
+}
+.tw-single div.tw-content {
+  min-height: auto;
+  padding-bottom: 20px;
+}
 
 
 

@@ -18,6 +18,13 @@ jQuery( function($){
             itemWidth = ( $firstItem.width() + parseInt($firstItem.css('margin-right')) ),
             isRTL = $postsContainer.hasClass('js-rtl'),
             updateProp = isRTL ? 'margin-right' : 'margin-left';
+        
+        //disable nav buttons for only one slide
+        if(numItems <= 1){
+            $('.tw-carousel-nav.right').hide();
+            $('.widget_tw-testimonial-widget').addClass('tw-single');
+
+        };
 
         $('.tw-carousel-nav.left').hide();
 

@@ -443,12 +443,12 @@ Site Navigation
 }
 // Navigation
 body .genesis-nav-menu {
-    // clear: both;
-    font-family: $body-font, sans-serif;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 1;
-    width: 100%;
+    // // clear: both;
+    // font-family: $body-font, sans-serif;
+    // font-size: 12px;
+    // font-weight: 400;
+    // line-height: 1;
+    // width: 100%;
 }
 
 // Main Nav
@@ -715,12 +715,15 @@ body .genesis-nav-menu {
 	}
 	.wrap {
 		max-width: 970px;
-		padding-top: 20px;
+		padding-top: 10px;
 	}
 	.footer-widgets-1{
 		width: 49%;
 		margin-left: 50%;
 		text-align: left;
+	}
+	#sow-button-2 {
+		margin-bottom: 35px;
 	}
 	.widget-title {
 		color: $dark-gray;
