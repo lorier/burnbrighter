@@ -54,6 +54,7 @@ function tw_latest_sticky() {
 add_shortcode('latest_stickies', 'tw_latest_sticky');
 
 function tw_get_the_category($id = 0){
-	$thecat = reset(get_the_category($id));
+	$catId = get_the_category($id);
+	$thecat = reset($catId);
 	return $thecat;
 }

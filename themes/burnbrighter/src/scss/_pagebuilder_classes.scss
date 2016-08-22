@@ -67,6 +67,11 @@
 		letter-spacing: $raleway-spacing;		
 	}
 }
+//Buttons 
+.ow-button-base a {
+	text-transform: uppercase;
+	letter-spacing: $raleway-spacing;
+}
 //Blog
 #podcast {
 	margin-left: 0 !important;
@@ -83,6 +88,9 @@
 }
 
 // Home Page
+#pgc-12-1-0 .panel-first-child {
+	margin-bottom: 0 !important;
+}
 .arrow-border {
 
 	background-image: url('images/green_triangles_up.png'),url('images/green_triangles.png');
@@ -261,6 +269,14 @@
 		&:hover {
 			text-decoration: none;
 		}
+		@media screen and (max-width: 600px){
+			padding-right: 90px !important;
+			.sow-icon-fontawesome {
+				font-size: 1.5em !important;
+				top: 8px !important;
+			}
+
+		}
 	}
 	.iw-so-acc-item > a:before {
 		display: block;
@@ -268,17 +284,11 @@
 		text-transform: uppercase;
 		margin-bottom: 0;
 		font-size: 14px;
-
+		line-height: 20px;
 	}
 	
 
 
-	
-
-	
-
-	
-	
 	> a:before {
 		content: 'BONUS SECTION!';
 	}
@@ -302,7 +312,7 @@
 	}
 	@media screen and (max-width: 780px){
 		div.iw-so-acc-item {
-			background-image: none;
+			background-image: none !important;
 			padding-left: 0;
 		}
 	}
@@ -311,6 +321,11 @@
 // FAQ accordion
 #faq-accordion .faq .iw-so-acc-item > a {
 	padding: 0;
+	line-height: 1.3em;
+	margin-top: 22px;
+}
+#faq-accordion .faq .iw-so-acc-item:first-child > a {
+	margin-top: 0px;
 }
 #faq-accordion .faq .content {
 	padding: 0;
@@ -340,6 +355,17 @@
 }
 .why-burn #panel-3-3-0-1 {
 	margin-bottom: 0 !important;
+}
+@media screen and (max-width: 780px){
+	.why-burn {
+		text-align: center;
+		max-width: 500px;
+		margin: 0 auto !important;
+		padding: 0 !important;
+		.ow-button-base {
+			text-align: center !important;
+		}
+	}
 }
 
 #pay-it-forward img{

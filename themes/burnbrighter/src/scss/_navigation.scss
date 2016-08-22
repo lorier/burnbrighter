@@ -181,6 +181,7 @@ Site Navigation
 			@media screen and (max-width: $mobile-nav-down){
 				background-size: 150px;
 				background-position: center center;
+
 			}
 		}
 		&.menu-primary li.site-logo a span{
@@ -366,7 +367,7 @@ Site Navigation
 //Secondary nav
 #nav-secondary-wrap {
 	position: relative;
-	height: 20px;
+	height: 0px;
 	float: right;
 }
 .nav-secondary {
@@ -517,7 +518,7 @@ body .genesis-nav-menu {
 	    height: 100px;
 	}
 	.site-title {
-		background: url(images/burn_brighter_logo.png) no-repeat center center;
+		background: url(images/burn_brighter_logo_mobile.png) no-repeat center center;
 		background-size: auto 100px;
 		padding: 0;
 		height: 100px;
