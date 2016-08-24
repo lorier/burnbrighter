@@ -24,7 +24,7 @@ function tw_latest_sticky() {
 			$the_query->the_post();
 			global $post;
 			$thecat = tw_get_the_category(get_the_ID());
-			$output .= '<a href="' .get_permalink(). '" title="'  . get_the_title() . '">';
+			$output .= '<a href="' .esc_url(get_permalink()). '" title="'  . get_the_title() . '">';
 			
 			$output .= '<div class="sticky-panel-wrapper"><div class="sticky-panel">';
 				$output .= '<div class="sticky-image">';
