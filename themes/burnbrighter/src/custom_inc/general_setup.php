@@ -26,6 +26,18 @@ function pb_single_post_info_filter($post_info) {
 		return $post_info;
 }
 
+//Add member side menu
+add_action( 'init', 'tw_register_member_side_menu' );
+function tw_register_member_side_menu() {
+	register_nav_menu( 'member-side' ,__( 'Member Dashboard Side Navigation Menu' ));
+}
+
+//Add member top menu
+add_action( 'init', 'tw_register_member_top_menu' );
+function tw_register_member_top_menu() {
+	register_nav_menu( 'member-top' ,__( 'Member Dashboard Top Navigation Menu' ));
+}
+
 add_action( 'wp_head', 'tw_blog_page_setup' );
 //add featured image to posts
 add_action( 'genesis_entry_content', 'pb_featured_post_image', 8 );
