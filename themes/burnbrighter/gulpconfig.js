@@ -41,11 +41,11 @@ module.exports = {
 
   images: {
     build: { // Copies images from `src` to `build`; does not optimize
-      src: src+'**/*(*.png|*.jpg|*.jpeg|*.gif|*.svg)'
+      src: src+'**/*(*.png|*.jpg|*.jpeg|*.gif|*.svg|*.ico)'
     , dest: build
     }
   , dist: {
-      src: [dist+'**/*(*.png|*.jpg|*.jpeg|*.gif|*.svg)', '!'+dist+'screenshot.png'] // The source is actually `dist` since we are minifying images in place
+      src: [dist+'**/*(*.png|*.jpg|*.jpeg|*.gif|*.svg|*.ico)', '!'+dist+'screenshot.png'] // The source is actually `dist` since we are minifying images in place
     , imagemin: {
         optimizationLevel: 7
       , progressive: true

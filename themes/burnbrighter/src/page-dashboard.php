@@ -25,12 +25,20 @@ function tw_body_class( $classes ) {
 	$classes[] = 'member-dashboard';
 	return $classes;
 }
-add_filter('genesis_pre_get_option_site_layout', '__genesis_return_sidebar_content');
-
-add_action('genesis_header_right', 'tw_add_member_topnav');
-function tw_add_member_topnav(){
-	wp_nav_menu( array( 'theme_location' => 'member-top', 'container_class' => 'genesis-nav-menu' ) );
+add_action('genesis_before_header', 'tw_program_header');
+function tw_program_header(){
+	$current_user = wp_get_current_user();
+ 	if ( !($current_user instanceof WP_User) ) {
+     	return;
+ 	}else {
+ 		$output = '<div class="member-header">';
+ 		$output .= '<h3><strong>Hello,  ' . $current_user->display_name . '!</strong><br /> Welcome to your Burn Brighter Program</h3>';
+ 		$output .= '</div>';
+		echo $output;
+ 	}
+ 
 }
+add_filter('genesis_pre_get_option_site_layout', '__genesis_return_sidebar_content');
 
 add_action('genesis_before_sidebar_widget_area', 'tw_add_member_sidebar');
 function tw_add_member_sidebar(){

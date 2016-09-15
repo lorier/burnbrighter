@@ -64,7 +64,8 @@
 .raleway-font {
 	h1,h2,h3,h4,h5,h6,p,li,span {
 		font-family: $navigation-font;
-		letter-spacing: $raleway-spacing;		
+		letter-spacing: $raleway-spacing;	
+		font-weight: 700;	
 	}
 }
 //Buttons 

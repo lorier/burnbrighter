@@ -70,7 +70,7 @@ class Tw_Testimonial_Widget extends SiteOrigin_Widget {
 			array(
 				array(
 					'touch-swipe',
-					plugin_dir_url( TW_BUNDLE_BASE_FILE ) . 'js/jquery.touchSwipe' . TW_BUNDLE_JS_SUFFIX . '.js',
+					plugin_dir_url( __FILE__) . 'js/jquery.touchSwipe.min.js',
 					array( 'jquery' ),
 					'1.6.6'
 				),

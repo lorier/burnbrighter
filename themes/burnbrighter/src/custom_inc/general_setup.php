@@ -2,9 +2,7 @@
 //remove tites from pages
 
 // Image sizes
-add_image_size( 'post_featured', 308, 400, true );
-// add_image_size( 'post_medium', 400, 218, true );
-// add_image_size( 'post_large', 573, 285, true );
+add_image_size( 'post_thumbnail', 308, 400, true );
 
 // Reposition the secondary navigation menu
 remove_action( 'genesis_after_header', 'genesis_do_subnav' );
@@ -32,11 +30,11 @@ function tw_register_member_side_menu() {
 	register_nav_menu( 'member-side' ,__( 'Member Dashboard Side Navigation Menu' ));
 }
 
-//Add member top menu
-add_action( 'init', 'tw_register_member_top_menu' );
-function tw_register_member_top_menu() {
-	register_nav_menu( 'member-top' ,__( 'Member Dashboard Top Navigation Menu' ));
-}
+// //Add member top menu
+// add_action( 'init', 'tw_register_member_top_menu' );
+// function tw_register_member_top_menu() {
+// 	register_nav_menu( 'member-top' ,__( 'Member Dashboard Top Navigation Menu' ));
+// }
 
 add_action( 'wp_head', 'tw_blog_page_setup' );
 //add featured image to posts

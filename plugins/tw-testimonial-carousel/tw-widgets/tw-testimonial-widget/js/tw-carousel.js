@@ -28,7 +28,6 @@ jQuery( function($){
 
         $('.tw-carousel-nav.left').hide();
 
-                console.log( 'totalPosts at beginning: ' + totalPosts);
 
         var updatePosition = function(){
             //don't go back before the beginning
@@ -48,41 +47,8 @@ jQuery( function($){
             updateControls(position, numItems);
         };
 
-        // var updatePositionAjax = function() {
-
-
-        //         // Fetch the next batch
-        //         if( !fetching &&  !complete ) {
-        //             fetching = true;
-        //             page++;
-        //             $itemsContainer.append('<li class="tw-carousel-item tw-carousel-loading"></li>');
-
-        //             $.get(
-        //                 $$.data('ajax-url'),
-        //                 {
-        //                     query : $$.data('query'),
-        //                     action : 'tw_carousel_load',
-        //                     paged : page
-        //                 },
-        //                 function (data, status){
-        //                     var $items = $(data.html);
-        //                     $items.appendTo( $itemsContainer ).hide().fadeIn();
-        //                     $$.find('.tw-carousel-loading').remove();
-        //                     numItems = $$.find('.tw-carousel-item').length;
-        //                     complete = numItems == totalPosts;
-        //                     fetching = false;
-        //                 }
-        //             )
-        //         }
-        //     $itemsContainer.css('transition-duration', "0.45s");
-            
-        //     $itemsContainer.css(updateProp, -( (itemWidth) * position) + 'px' );
-        //     updateControls(position, numItems);
-            
-        // };
+       
         var updateControls = function(position, totalPosts){
-            console.log("totalPosts: " + totalPosts);
-            console.log("position: " + position);
                 if (position >= totalPosts-2){
                     $('.tw-carousel-nav.right').hide();
                 }else {$('.tw-carousel-nav.right').show();}
@@ -104,7 +70,6 @@ jQuery( function($){
             function(e){
                 e.preventDefault();
                 position += isRTL ? -1 : 1;
-                console.log("clickhandler: " + position);
                 updatePosition();
             }
         );

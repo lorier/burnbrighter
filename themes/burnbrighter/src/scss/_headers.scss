@@ -64,13 +64,17 @@
 	background: #009ce9 url('images/home_bg.jpg') no-repeat center top;
 }
 .blog #top-header,
-.single #top-header {
+.single #top-header,
+.archive #top-header {
 	background: $lightest-gray url('images/red_pattern.jpg') repeat center center;
 	height: 360px;
 	.widget.widget_sow-image {
 		max-width: 550px;	
 	}
 
+}
+.archive #top-header {
+	margin-bottom: 35px;
 }
 .philosophy-page #top-header {
 	background: #0077c3 url('images/philosophy_hero.jpg') no-repeat center top;
@@ -87,7 +91,15 @@
 	background: #3e7c1b url('images/program_hero.jpg') no-repeat center center;
 	height: 367px;
 }
-
+.member-header{
+	background: $lightest-gray url('images/red_pattern.jpg') repeat center center;
+	height: 100px;
+	text-align: center;
+	padding-top: 20px;
+	h3{
+		color: 	white;
+	}
+}
 // @media screen and (max-width: 900px){
 // 	.before-content {
 // 		height: 300px;
