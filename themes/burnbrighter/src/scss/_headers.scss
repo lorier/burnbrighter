@@ -1,18 +1,25 @@
 // // // ==== HEADERS ==== //
-// // Kickstart bulk overrides
-// .before-contact, .before-content, .top-header  {
-// 	position: inherit;
-// }
-// .header-image .before-contact, .header-image .before-content, .header-image .top-header{
-// 	position: inherit;
-// 	margin-bottom: 0;
-// }
-// //
-// .before-content {
-// 	margin-top: 0;
-// 	height: 355px;
-// }
-// 
+
+
+.page-template-page-titlebar .default-header {
+	background: $lightest-gray url('images/red_pattern.jpg') repeat center center;
+	text-align: center;
+	padding-top: 50px;
+	padding-bottom: 40px;
+	display: table;
+	width: 100%;
+	h1{
+		color: 	white;
+		max-width: 700px;
+		margin: 0 auto;
+		display: table-cell;
+		vertical-align: middle;
+		font-family: $navigation-font;
+		font-size: 40px;
+		color: white;
+		text-align: center;
+	}
+}
 //fix for div inserted by the home-top widget/kickstart theme
 .site-container > header+div{
 	// height: 105px !important;
@@ -100,143 +107,3 @@
 		color: 	white;
 	}
 }
-// @media screen and (max-width: 900px){
-// 	.before-content {
-// 		height: 300px;
-// 	}
-// 	#home-top {
-// 		background: $green url('images/home-top-tablet.png') no-repeat center center;
-	
-// 		.widget_text {
-// 			left: 10%;
-// 		}
-// 	}
-
-// }
-// @media screen and (max-width: 680px){
-// 	.before-content {
-// 		height: 300px;
-// 	}
-// 	#home-top {
-// 		background: $green url('images/home-top-tablet.png') no-repeat center center;
-	
-// 		.widget_text {
-// 			left: 10%;
-// 		}
-// 	}
-
-// }
-// @media screen and (max-width: 550px){
-// 	.before-content {
-// 		height: 500px;
-// 	}
-// 	#home-top {
-// 		background: $green url('images/home-top-mobile.png') no-repeat top center;
-	
-// 		.widget_text {
-// 			top: 200px;
-// 			left: 0;
-// 		}
-// 	}
-// }
-// //Individual Page Headers
-// //
-// .banner-strip {
-// 	text-align: center;
-// 	height: 152px;
-// }
-// .banner-strip {
-// 	display: table;
-// 	width: 100%;
-// }
-// .banner-strip h1 {
-// 	display: table-cell;
-// 	vertical-align: middle;
-// }
-// .blog,
-// .archive,
-// .single { 
-// 	& .banner-strip h1 {
-// 		font-size: 50px;
-// 		line-height: 40px;
-// 	}
-// }
-// //all other pages not specified below will be yellow
-// .banner-strip {
-// 	background: $red url('images/header-yellow.png') no-repeat top center;
-// 	h1 {
-// 		color: $red;
-// 	}
-// }
-
-// .banner-strip span.blog-subtitle {
-// 	font-size: 25px;
-// 	line-height: 25px;
-// }
-// //Careers (Red)
-// .page-id-11 .banner-strip,
-// .page-id-53 .banner-strip {
-// 	background: $red url('images/header-red.png') no-repeat top center;
-// 	h1 {
-// 		color: white;
-// 	}
-// }
-// //About/Contact (Yellow)
-// .page-id-12 .banner-strip,
-// .page-id-392 .banner-strip{
-// 	background: $red url('images/header-yellow.png') no-repeat top center;
-// 	h1 {
-// 		color: white;
-// 	}
-// }
-// //Clients
-// .page-id-11 .banner-strip{
-// 	background: $red url('images/header-yellow.png') no-repeat top center;
-// 	h1 {
-// 		color: white;
-// 	}	
-// }
-// .blog .banner-strip,
-// .single .banner-strip,
-// .archive .banner-strip {
-// 	background: $red url('images/header-purple.png') no-repeat top center;
-// 	h1 {
-// 		color: white;
-// 	}	
-// }
-// // Expertise	
-// .page-id-9 .banner-strip,
-// .parent-pageid-9 .banner-strip
-//  {
-// 	background: $green url('images/header-green-expertise.png') no-repeat top center;
-// 	h1 {
-// 		color: white;
-// 		max-width: 600px
-// 	}	
-// }
-// //Services
-// .page-id-8 .banner-strip,
-// .parent-pageid-8 .banner-strip {
-// 	background: $red url('images/header-yellow-services.png') no-repeat top center;
-// 	h1 {
-// 		color: white;
-// 		max-width: 600px;
-// 	}	
-// }
-// // Exam 
-// .page-id-268 .banner-strip,
-// .parent-pageid-268 .banner-strip {
-// 	background: $red url('images/header-purple-exam.png') no-repeat top center;
-// 	h1 {
-// 		color: white;
-// 		max-width: 600px;
-// 	}	
-// }
-// //For Providers
-// .page-id-10 .banner-strip {
-// 	background: $green url('images/header-green-providers.png') no-repeat top center;
-// 	h1 {
-// 		color: white;
-// 		max-width: 600px;
-// 	}	
-// }

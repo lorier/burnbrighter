@@ -28,7 +28,7 @@ function tw_latest_sticky() {
 			
 			$output .= '<div class="sticky-panel-wrapper"><div class="sticky-panel">';
 				$output .= '<div class="sticky-image">';
-				$output .= get_the_post_thumbnail();
+				$output .= get_the_post_thumbnail( $post,'homepage_sticky');
 				$output .= '<p class="sticky-category '.$thecat->slug.'">'.$thecat->name.'</p>';
 				$output .= '</div>';
 				$output .= '<div class="sticky-title">';

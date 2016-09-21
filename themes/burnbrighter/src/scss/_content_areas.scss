@@ -3,20 +3,61 @@
 Content Area
 ---------------------------------------------------------------------------------------------------- */
 
-/* Entries
---------------------------------------------- */
+//
+.page-template-page-titlebar .entry-content {
+	padding-top: 50px;
+	padding-bottom: 50px;
+	max-width: 700px;
+	margin: 0 auto;
+}
+
 //error 404
 
 .error404 {
+
+	.error-header {
+		height: 0;
+		background: #eeeee9 url(images/red_pattern.jpg) repeat 50%;
+    	height: 180px;
+    	display: table;
+    	width: 100%;
+    	margin-bottom: 30px;
+    	h1 {
+    		display: table-cell;
+    		vertical-align: middle;
+    		font-family: $navigation-font;
+    		font-size: 80px;
+    		color: white;
+    		text-align: center;
+    	}
+	}
 	.entry-content {
-	    max-width: 520px;
+	    max-width: 700px;
 	    margin: 0 auto;
+	    margin-bottom: 40px;
 	}
     .entry-title {
     	text-align: center;
     }
+    .entry-content .search-form {
+    	width: 100%;
+    }
+	.genesis-404-search {
+		width: auto;
+		text-align: center;
+		input[type="search"]{
+			max-width: 70%;
+			line-height: 20px;
+			vertical-align: middle;
+		}
+		input[type="submit"]{
+		    border: 1px solid $red;
+		    padding: 10px 24px;
+		    line-height: 20px;
+		    vertical-align: middle;
+		}	
+	}
 }
-
 //site map
 .page-id-292 .entry-content {
 	max-width: 520px;

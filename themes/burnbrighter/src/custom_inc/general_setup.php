@@ -2,7 +2,10 @@
 //remove tites from pages
 
 // Image sizes
-add_image_size( 'post_thumbnail', 308, 400, true );
+add_action( 'after_setup_theme', 'tw_feature_image_crop' );
+function tw_feature_image_crop() {
+	add_image_size( 'homepage_sticky', 308, 400, true );
+}
 
 // Reposition the secondary navigation menu
 remove_action( 'genesis_after_header', 'genesis_do_subnav' );
@@ -126,5 +129,11 @@ add_action( 'get_header', 'tw_remove_post_titles' );
 function tw_remove_post_titles() {
 	if(is_page()){
 		remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
+	}
+}
+add_action( 'genesis_after_header', 'tw_404_header' );
+function tw_404_header(){
+	if(is_404()){
+		echo "<div class='error-header'><h1>404</h1></div>";
 	}
 }

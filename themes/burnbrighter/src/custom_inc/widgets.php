@@ -108,7 +108,7 @@ add_action( 'wp_head', 'tw_blog_page_setup' );
 
 function tw_blog_page_setup() {
 
-	if ( !is_page() && is_active_sidebar( 'blog-top-header' ) ) {
+	if ( !is_page() && !is_404() && is_active_sidebar( 'blog-top-header' ) ) {
 
 		// Add body class
 		add_filter( 'body_class', 'tw_blog_body_class' );

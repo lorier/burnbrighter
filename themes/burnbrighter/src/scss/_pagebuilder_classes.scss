@@ -19,7 +19,7 @@
 	list-style-type: none;
 }
 //checklist bullets {
-.check-list li:before {
+.check-list ul li:before {
 	font-family: FontAwesome;
     content: '\f00c';
     position: relative;
@@ -29,7 +29,7 @@
     display: inline-block;
     text-decoration: none;
 }
-.check-list-white li:before{
+.check-list-white ul li:before{
 	font-family: FontAwesome;
     content: '\f00c';
     position: relative;
