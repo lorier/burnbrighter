@@ -33,11 +33,11 @@ function tw_register_member_side_menu() {
 	register_nav_menu( 'member-side' ,__( 'Member Dashboard Side Navigation Menu' ));
 }
 
-// //Add member top menu
-// add_action( 'init', 'tw_register_member_top_menu' );
-// function tw_register_member_top_menu() {
-// 	register_nav_menu( 'member-top' ,__( 'Member Dashboard Top Navigation Menu' ));
-// }
+//Add Legal Menu
+add_action( 'init', 'tw_register_legal_menu' );
+function tw_register_legal_menu() {
+	register_nav_menu( 'legal' ,__( 'Legal Documents Menu' ));
+}
 
 add_action( 'wp_head', 'tw_blog_page_setup' );
 //add featured image to posts
@@ -51,11 +51,25 @@ function pb_featured_post_image() {
 remove_action( 'genesis_footer', 'genesis_do_footer' );
 add_action( 'genesis_footer', 'sp_custom_footer', 11 );
 function sp_custom_footer() {
-	$output = '<div class="wrap"><p> &copy; Copyright ';
+	$output = '<div class="wrap copyright"><p> &copy; Copyright ';
 	$output .= date('Y');
-	$output .= ' Burn Brighter. All rights reserved.</p></div>';
+	$output .= ' BurnBrighterLLC. All rights reserved.</p></div>';
 	echo $output;
 }
+//Add legal links to footer
+add_action( 'genesis_footer', 'pb_footer_menu', 12 );
+function pb_footer_menu() {
+
+	genesis_nav_menu( array(
+		'theme_location' => 'legal',
+		'container'       => 'div',
+		'container_class' => 'wrap',
+		'menu_class'     => 'legal-menu',
+		'depth'           => 1
+	) );
+
+}
+
 remove_action( 'genesis_before_footer', 'genesis_footer_widget_areas' );
 add_action( 'genesis_footer', 'genesis_footer_widget_areas' );
 

@@ -1,24 +1,83 @@
 //=== membership page template===//
 
-// .member-dashboard {
-// 	.site-header{
-// 		background-color: $green;
-// 		.wrap {
-// 			height: auto;
-// 		}
-// 	}
-// 	.genesis-nav-menu a {
-// 		color: white;
-// 	}
-// 	.site-inner {
-// 		max-width: 100%;
-// 	}
-// 	.sidebar {
-// 		background-color: $light-gray;
-// 		padding-left: 40px;
-// 		li {
-// 			border-bottom: 0;
-// 		}
-// 	}
-// }
-// 
+.member-header{
+	background: $lightest-gray url('images/red_pattern.jpg') repeat center center;
+	height: auto;
+	text-align: left;
+	padding-top: 0px;
+	margin-bottom: 30px;
+	.wrap {
+		height: 220px;
+	}
+	h3{
+		color: white;
+		@media screen and (min-width: $desktop-nav-up){
+			padding-left: 20px;
+		}
+	}
+	.hero-image {
+		line-height: 0;
+		height: 100%;
+		img {
+			height: 100%;
+		}
+	}
+	.title-text {
+		display: table-cell;
+		vertical-align: middle;
+		height: 200px;
+		width: 100%;
+		text-align: center;
+
+	}
+	.three-fourths {
+		display: table;
+		// margin-left: 0;
+	}
+	.member-welcome-title {
+		font-family: 'Smitten-Regular', sans-serif;
+		color: #fff;
+		font-size: 90px;
+		line-height: 82px;
+		margin-bottom: 0;
+	}
+
+}
+
+
+.page-template-page-dashboard {
+
+	.sidebar {
+		width: 230px;
+		li a {
+			font-size: 18px;
+			color: $red;
+		}
+	}
+	.site-inner {
+		padding-bottom: 80px;
+		background-color: #fff;
+	}
+	.site-footer{
+		color: #3e3636;
+	    height: 40px;
+	    margin-top: 40px;
+	    background-color: #fff;
+	    background-image: none;
+	    border-top: 1px solid $forms-gray;
+    }
+}
+.link-out:after {
+	content: '\f08e';
+	font-family: 'FontAwesome';
+	margin: 0 6px 0 5px;
+	display: inline-block;
+	color: $forms-gray;
+}
+.link-back:before {
+	content: '\f104';
+	font-family: 'FontAwesome';
+	margin: 0 6px 0 0;
+	display: inline-block;
+	color: $red;
+}

@@ -516,6 +516,8 @@ body .genesis-nav-menu {
 		float: left;
 	    height: 80px;
 	    height: 100px;
+	    position:relative;
+	    z-index: 1000;
 	}
 	.site-title {
 		background: url(images/burn_brighter_logo_mobile.png) no-repeat center center;
@@ -561,6 +563,7 @@ body .genesis-nav-menu {
 	 }
 	nav.nav-primary {
 		border-bottom: 1px solid $gray-rule;
+		background-color: #fff;
 	}
 	.nav-primary ul {
 		border-top: 1px solid $gray-rule;
@@ -641,146 +644,5 @@ body .genesis-nav-menu {
 		top: 2px;
 	}
 }
-// Footer 
-.site-footer {
-	color: $dark-gray;
-	height: 326px;
-	background-color: $green, $green; 
-	background-image: url(images/breanne_footer.png), url(images/green_pattern.jpg);
-	background-repeat: no-repeat, repeat; 
-	background-position: center top, center center;
-	> .wrap p {
-		// width: 49%;
-		// margin-left: 50%;
-		// text-align: left;
-	}
-	ul {
-		list-style-type: none;
-	}
-	li {
-		display: inline-block;
-		color: $dark-gray;
-	}
-	li:after {
-		content: '  |  ';
-		display: inline;
-		position: relative;
-		// right: -2px;
-	}
-	li:last-child:after {
-		content: '';
-	}
-	li a {
-		color: $dark-gray;
-		display: inline-block;
-		padding: 0 10px;
 
-		&:hover {
-			text-decoration: underline;
-		}
-		&:focus {
-			outline: none;
-			font-weight: bold;	
-		}
-	}
-	//Podcast button
-	.widget_sow-button {
-		font-family: $headline-font;
-		text-transform: uppercase;
-		font-size: 17px;
-		font-weight: bold;
-		.sow-icon-fontawesome {
-			margin-right: 8px;
-		    margin-left: -6px;
-		}
-	}
-	.so-widget-sow-button-flat-384499edf124 .ow-button-base a [class^="sow-icon-"] {
-			margin-right: 8px;
-		    margin-left: -6px;
-	}
-}
-
-.footer-widget-header-container{
-	background-color: $lightest-gray;
-	padding: 45px 0;
-}
-
-.footer-widgets {
-	color: #959799;
-	clear: both;
-	font-size: 14px;
-	padding: 0;
-	a:hover, a:focus {
-		text-decoration: underline;
-		outline: none;
-	}
-	.wrap {
-		max-width: 970px;
-		padding-top: 10px;
-	}
-	.footer-widgets-1{
-		width: 49%;
-		margin-left: 50%;
-		text-align: left;
-	}
-	#sow-button-2 {
-		margin-bottom: 35px;
-	}
-	.widget-title {
-		color: $dark-gray;
-		font-weight: bold;
-		font-size: 16px;
-		letter-spacing: .04em;
-		text-transform: uppercase;
-		margin-bottom: 5px;
-	}
-	.textwidget, 
-	.textwidget p, 
-	.textwidget li, 
-	.textwidget a {
-		font-family: $body-font;
-		font-size: 17px; 
-		color: white;
-	}
-	.textwidget li:before {
-		content: '\f09a';
-
-		font-family: 'FontAwesome';
-		position: relative;
-		top: 1px;
-		right: -5px;
-		display: inline-block;
-		text-decoration: none;
-
-	}
-	.textwidget li.instagram:before {
-		content: '\f16d';
-	}
-	.textwidget li.twitter:before {
-		content: '\f099';
-	}
-	.widget_nav_menu a {
-		color: $dark-gray;
-	}
-}
-@media screen and (max-width: $mobile-nav-down){
-
-}
-@media screen and (max-width: 780px){
-	
-	.footer-widgets .footer-widgets-1 {
-		width: 100%;
-		text-align: center;
-		padding-top: 20px;
-		margin: 0;
-		text-align: center;
-
-	}
-	#sow-button-2 .ow-button-base.ow-button-align-left {
-		text-align: center;
-	}
-	.site-footer {
-		background: $green url('images/green_pattern.jpg') repeat center center;
-	}
-}
 

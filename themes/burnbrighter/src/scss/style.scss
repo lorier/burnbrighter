@@ -42,11 +42,13 @@ Domain Path: #{metadata(theme-text-domain-path)}
 @import "sidebar";
 @import "typography";
 @import "content_areas";
+@import "footer";
 @import "pagebuilder_classes";
 @import "sticky_posts";
 @import "membership";
 @import "ontraport";
 @import "stripe";
+
 // Reset: eliminate default browser styling (optional; commented out by default)
 //@import "reset";
 

@@ -1,0 +1,353 @@
+
+/*
+Before Footer
+---------------------------------------------------------------------------------------------------- */
+
+.before-footer {
+	background-color: $red;
+	color: #fff;
+	padding: 21px 0;
+}
+
+.before-footer a {
+	color: #fff;
+}
+
+.before-footer .widget-title {
+	color: #fff;
+	display: inline;
+	float: left;
+	font-size: 16px;
+	font-weight: 300;
+	line-height: 1.625;
+	margin-bottom: 0;
+	padding-left: 40px;
+}
+
+.before-footer .latest-tweets {
+	position: relative;
+}
+
+.before-footer .latest-tweets:before {
+	color: #fff;
+	content: "\f099";
+	font-family: FontAwesome;
+	position: absolute;
+	left: 0;
+}
+
+.before-footer .latest-tweets ul li {
+	float: left;
+	font-size: 16px;
+	list-style-type: none;
+	margin-bottom: 0;
+	padding-left: 40px;
+	text-transform: uppercase;
+}
+
+.before-footer .latest-tweets .tweet-text {
+	opacity: 0.5;
+}
+
+.before-footer .latest-tweets .tweet-details a span {
+	color: #fff;
+	display: inline;
+	font-size: 11px;
+	font-weight: 300;
+	margin: 0;
+	padding-left: 20px;
+	text-transform: none;
+}
+
+
+/*
+Footer Widgets
+---------------------------------------------------------------------------------------------------- */
+
+// .footer-widgets {
+// 	background-color: #34393e;
+// 	color: #959799;
+// 	clear: both;
+// 	font-size: 14px;
+// 	padding: 40px 0 16px;
+// }
+
+// .footer-widgets .wrap {
+// 	max-width: 970px;
+// }
+
+.footer-widgets-1,
+.footer-widgets-2,
+.footer-widgets-3,
+.footer-widgets-4,
+.footer-widgets-5 {
+	width: 176px;
+}
+
+.footer-widgets .widget-area {
+	margin-right: 18px;
+}
+
+.footer-widgets .widget-area:last-child {
+	margin-right: 0;
+}
+
+.footer-widgets-1,
+.footer-widgets-2,
+.footer-widgets-3,
+.footer-widgets-4 {
+	float: left;
+}
+
+.footer-widgets-5 {
+	float: right;
+}
+
+.footer-widgets a {
+	color: #959799;
+}
+
+.footer-widgets a:hover {
+	color: #fff;
+}
+
+.footer-widgets .widget {
+	margin-bottom: 12px;
+}
+
+.footer-widgets .widget-title {
+	text-transform: none;
+}
+
+.footer-widgets li {
+	list-style-type: none;
+	margin-bottom: 6px;
+	word-wrap: break-word;
+}
+
+.footer-widgets .latest-tweets .tweet-details a span {
+	color: #616468;
+	display: block;
+	font-weight: 300;
+	text-transform: none;
+}
+
+.footer-widgets .latest-tweets .tweet-details a:hover span {
+	color: #fff;
+}
+
+.footer-widgets .search-form input:focus {
+	border: 1px solid #ddd;
+}
+
+.footer-widgets .widget_tag_cloud a {
+	color: #fff;
+}
+
+.footer-widgets .widget_tag_cloud a:hover {
+	background-color: #efefef;
+	color: #999;
+}
+
+
+/*
+Footer Social
+---------------------------------------------------------------------------------------------------- */
+
+.footer-social {
+	background-color: #34393e;
+	color: #fff;
+}
+
+.footer-social a {
+	color: #fff;
+}
+
+.footer-social .simple-social-icons ul li {
+	margin: 0 2px 12px !important;
+}
+
+.footer-social .simple-social-icons a,
+.footer-social .simple-social-icons a:hover {
+	background: none !important;
+	border: 3px solid #fff !important;
+}
+
+.footer-social .simple-social-icons a:hover {
+	background-color: #fff !important;
+	color: #34393e !important;
+}
+
+
+/*
+Site Footer
+---------------------------------------------------------------------------------------------------- */
+
+.site-footer {
+	background-color: #34393e;
+	color: #959799;
+	font-size: 12px;
+	padding: 40px 0;
+	text-align: center;
+}
+
+.site-footer a:hover {
+	// color: #fff;
+}
+
+.site-footer p {
+	margin-bottom: 0;
+}
+// Footer 
+.site-footer {
+	color: $dark-gray;
+	height: 326px;
+	background-color: $green, $green; 
+	background-image: url(images/breanne_footer.png), url(images/green_pattern.jpg);
+	background-repeat: no-repeat, repeat; 
+	background-position: center top, center center;
+	> .wrap p {
+		// width: 49%;
+		// margin-left: 50%;
+		// text-align: left;
+	}
+	ul {
+		list-style-type: none;
+	}
+	li {
+		display: inline-block;
+		color: $dark-gray;
+	}
+	li:after {
+		content: '  |  ';
+		display: inline;
+		position: relative;
+		// right: -2px;
+	}
+	li:last-child:after {
+		content: '';
+	}
+	li a {
+		color: $dark-gray;
+		display: inline-block;
+		padding: 0 10px;
+
+		&:hover {
+			text-decoration: underline;
+		}
+		&:focus {
+			outline: none;
+
+		}
+	}
+	//Podcast button
+	.widget_sow-button {
+		font-family: $headline-font;
+		text-transform: uppercase;
+		font-size: 17px;
+		font-weight: bold;
+		.sow-icon-fontawesome {
+			margin-right: 8px;
+		    margin-left: -6px;
+		}
+	}
+	.so-widget-sow-button-flat-384499edf124 .ow-button-base a [class^="sow-icon-"] {
+			margin-right: 8px;
+		    margin-left: -6px;
+	}
+	.nav-legal {
+		display: block !important;
+		ul li a {
+			padding: 0 5px;
+			font-size: 11px
+		}
+	}
+	.copyright{
+		margin-top: 10px;
+	}
+}
+
+.footer-widget-header-container{
+	background-color: $lightest-gray;
+	padding: 45px 0;
+}
+
+.footer-widgets {
+	color: #959799;
+	clear: both;
+	font-size: 14px;
+	padding: 0;
+	a:hover, a:focus {
+		text-decoration: underline;
+		outline: none;
+	}
+	.wrap {
+		max-width: 970px;
+		padding-top: 10px;
+	}
+	.footer-widgets-1{
+		width: 49%;
+		margin-left: 50%;
+		text-align: left;
+	}
+	#sow-button-4 {
+		margin-bottom: 25px;
+	}
+	.widget-title {
+		color: $dark-gray;
+		font-weight: bold;
+		font-size: 16px;
+		letter-spacing: .04em;
+		text-transform: uppercase;
+		margin-bottom: 5px;
+	}
+	.textwidget, 
+	.textwidget p, 
+	.textwidget li, 
+	.textwidget a {
+		font-family: $body-font;
+		font-size: 17px; 
+		color: white;
+	}
+	.textwidget li:before {
+		content: '\f09a';
+
+		font-family: 'FontAwesome';
+		position: relative;
+		top: 1px;
+		right: -5px;
+		display: inline-block;
+		text-decoration: none;
+
+	}
+	.textwidget li.instagram:before {
+		content: '\f16d';
+	}
+	.textwidget li.twitter:before {
+		content: '\f099';
+	}
+	.widget_nav_menu a {
+		color: $dark-gray;
+	}
+}
+@media screen and (max-width: $mobile-nav-down){
+	.footer-widgets .footer-widgets-1 {
+		width: 100%;
+		text-align: center;
+		padding-top: 20px;
+		margin: 0;
+		text-align: center;
+
+	}
+	#sow-button-2 .ow-button-base.ow-button-align-left {
+		text-align: center;
+	}
+	.site-footer {
+		height: auto;
+		background: $green url('images/green_pattern.jpg') repeat center center;
+	}
+}
+@media screen and (max-width: 780px){
+	
+	
+}

@@ -331,6 +331,14 @@
 #faq-accordion .faq .content {
 	padding: 0;
 }
+#faq-accordion .faq .iw-so-acc-content a {
+	color: $dark-gray;
+	text-decoration: underline;
+	&:hover {
+		color: $dark-gray;
+	}
+}
+
 
 //Philosophy page
 #pg-3-3 #panel-3-3-1-0 {
