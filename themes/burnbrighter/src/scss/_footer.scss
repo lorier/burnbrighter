@@ -251,6 +251,11 @@ Site Footer
 		    margin-left: -6px;
 		}
 	}
+	@media screen and (min-width: 901px) {
+		.ow-button-base .ow-button-align-left {
+			text-align: center;
+		}
+	}
 	.so-widget-sow-button-flat-384499edf124 .ow-button-base a [class^="sow-icon-"] {
 			margin-right: 8px;
 		    margin-left: -6px;

@@ -487,8 +487,19 @@ body .genesis-nav-menu {
 		line-height: 20px;
 	}
 }
+
+.mobile-member-login {
+		display: none;
+		visibility: hidden;
+}
+
 // Hamburger Menu
 @media screen and (max-width: $mobile-nav-down){
+	
+	.mobile-member-login {
+		display: block;
+		visibility: visible;
+	}
 
 	.site-header {
 		background-color: white;
